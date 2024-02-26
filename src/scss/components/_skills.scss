@@ -1,0 +1,30 @@
+/* -------------------------------------------
+
+skills
+
+------------------------------------------- */
+.mil-progress-inline {
+	width: calc(100% - 90px);
+}
+
+.mil-progress-track {
+	border-bottom: solid 2px $soft;
+	padding      : 5px 0;
+	margin-left  : 7px;
+
+	& .mil-progress {
+		position     : relative;
+		left         : -7px;
+		height       : 10px;
+		border-bottom: solid 2px $accent;
+		border-right : solid 2px $accent;
+
+		& .mil-upper {
+			position   : absolute;
+			top        : 0;
+			right      : 0;
+			transform  : translate(50%, -29px);
+			line-height: 20px;
+		}
+	}
+}

@@ -1,0 +1,75 @@
+/* -------------------------------------------
+
+banner
+
+------------------------------------------- */
+
+.mil-top-banner {
+	padding-top   : 200px;
+	padding-bottom: 100px;
+
+	@media screen and (max-width: 1200px) {
+		padding-top   : 170px;
+		padding-bottom: 60px;
+
+		p br {
+			display: none;
+		}
+	}
+}
+
+.mil-banner {
+	position: relative;
+	overflow: hidden;
+
+	@media screen and (max-width: 1200px) {
+		padding-top  : 90px;
+		margin-bottom: 60px;
+	}
+
+	& .mil-banner-image {
+		width             : 100%;
+		height            : 100vh;
+		-o-object-fit     : cover;
+		object-fit        : cover;
+		-o-object-position: center;
+		object-position   : center;
+		vertical-align    : top;
+
+		@media screen and (max-width: 1200px) {
+			height: 60vh;
+		}
+	}
+
+	& .mil-banner-text {
+		position  : relative;
+		text-align: left;
+		padding   : 0 20% 0 10%;
+
+		@media screen and (max-width: 1200px) {
+			padding   : 60px 30px;
+			text-align: center;
+		}
+	}
+
+	& .mil-short {
+		max-width: 680px;
+
+		@media screen and (max-width: 1200px) {
+			max-width: 100%;
+		}
+	}
+
+	&.mil-banner-right {
+		& .mil-banner-text {
+			position  : relative;
+			text-align: left;
+			padding   : 0 10% 0 20%;
+
+			@media screen and (max-width: 1200px) {
+				padding   : 60px 30px;
+				text-align: center;
+			}
+		}
+	}
+}

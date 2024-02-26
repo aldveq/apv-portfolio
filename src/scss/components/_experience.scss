@@ -1,0 +1,114 @@
+/* -------------------------------------------
+
+experience
+
+------------------------------------------- */
+.swiper-container {
+	overflow   : hidden;
+	padding-top: 60px;
+}
+
+.mil-timeline-nav,
+.mil-reviews-nav {
+	position   : relative;
+	padding    : 60px 0 60px 60px;
+	border-left: solid 2px $dark;
+
+	&::after {
+		content    : '';
+		position   : absolute;
+		top        : 7px;
+		bottom     : -5px;
+		left       : 5px;
+		border-left: 2px solid $soft;
+	}
+
+	@media screen and (max-width: 1200px) {
+		margin-top     : 30px;
+		border         : none;
+		border-top     : solid 2px $dark;
+		padding        : 0;
+		padding-top    : 30px;
+		display        : flex;
+		justify-content: space-between;
+		align-items    : center;
+		width          : 100%;
+
+		&::after {
+			display: none;
+		}
+
+		& .mil-timeline-pagination {
+			text-align: right;
+		}
+
+		& .mil-reviews-pagination {
+			text-align: right;
+		}
+	}
+}
+
+.mil-timeline-nav-2 {
+	display        : flex;
+	justify-content: flex-end;
+	align-items    : center;
+
+	& .mil-timeline-2-pagination {
+		width       : auto;
+		margin-right: 30px;
+	}
+
+	@media screen and (max-width: 1200px) {
+		justify-content: flex-start;
+	}
+}
+
+.mil-divider {
+	position        : relative;
+	background-color: $dark;
+	height          : 2px;
+	width           : 100%;
+
+	&::after {
+		content      : '';
+		position     : absolute;
+		left         : 7px;
+		top          : 7px;
+		right        : -5px;
+		border-bottom: 2px solid $soft;
+	}
+}
+
+.mil-slider-nav {
+	display: flex;
+
+	& .mil-prev,
+	& .mil-next {
+		cursor         : pointer;
+		width          : 60px;
+		height         : 60px;
+		border         : solid 2px $dark;
+		display        : flex;
+		color          : $dark;
+		justify-content: center;
+		align-items    : center;
+		box-shadow     : 6px 6px 0 0 $soft;
+		transition     : $tr;
+
+		&.swiper-button-disabled {
+			opacity: .2;
+		}
+
+		&:hover {
+			box-shadow: 0px 0px 0 0 $soft;
+		}
+	}
+
+	& .mil-prev {
+		margin-right: 15px;
+
+		& svg {
+			transform: rotate(180deg);
+		}
+	}
+}

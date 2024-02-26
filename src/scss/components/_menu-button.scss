@@ -1,0 +1,67 @@
+/* -------------------------------------------
+
+menu button
+
+------------------------------------------- */
+
+.mil-menu-btn {
+	margin-right    : 30px;
+	background-color: $light;
+	padding         : 25px 15px;
+	border          : solid 2px $dark;
+	height          : 24px;
+	cursor          : pointer;
+	display         : none;
+	justify-content : center;
+	align-items     : center;
+	box-shadow      : 6px 6px 0 0 $soft;
+	transition      : $tr;
+
+	@media screen and (max-width: 1200px) {
+		display: flex;
+	}
+
+	& span,
+	& span:after,
+	& span:before {
+		content            : "";
+		display            : block;
+		width              : 24px;
+		height             : 2px;
+		background         : $dark;
+		backface-visibility: hidden;
+		transition         : inherit;
+	}
+
+	& span {
+		position: relative;
+
+		&:after,
+		&:before {
+			position: absolute;
+		}
+
+		&:before {
+			top: -8px;
+		}
+
+		&:after {
+			top: 8px;
+		}
+	}
+
+	&.mil-active {
+		& span {
+			transform: rotate(45deg);
+
+			&:before {
+				transform: translate(0px, 8px) rotate(-90deg);
+			}
+
+			&:after {
+				width    : 24px;
+				transform: translate(0px, -8px) rotate(-90deg);
+			}
+		}
+	}
+}

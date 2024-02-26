@@ -1,0 +1,49 @@
+/* -------------------------------------------
+
+contact
+
+------------------------------------------- */
+.mil-contact-card {
+	position: relative;
+	padding : 30px;
+	border  : solid 2px $dark;
+
+	&::before {
+		content       : "";
+		position      : absolute;
+		left          : 5px;
+		right         : -9px;
+		top           : 5px;
+		bottom        : -9px;
+		border        : 2px solid $soft;
+		pointer-events: none;
+	}
+
+	&::after {
+		content    : '';
+		position   : absolute;
+		top        : 10px;
+		right      : 10px;
+		width      : 70px;
+		height     : 70px;
+		z-index    : -1;
+		--dot-size : 2px;
+		--dot-space: 10px;
+		background :
+			linear-gradient(90deg, $light calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+			linear-gradient($light calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+			$dark;
+		opacity       : 0.3;
+		pointer-events: none;
+	}
+
+	& a {
+		text-decoration: none;
+		color          : inherit;
+		transition     : $tr;
+
+		&:hover {
+			color: $accent;
+		}
+	}
+}

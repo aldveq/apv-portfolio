@@ -1,0 +1,167 @@
+/* -------------------------------------------
+
+portfolio
+
+------------------------------------------- */
+.mil-portfolio-grid {
+	margin-left : -30px;
+	margin-right: -30px;
+
+	& .grid-sizer,
+	& .mil-grid-item {
+		width  : 33.333%;
+		padding: 0 30px;
+	}
+
+	& .mil-grid-item {
+		&.mil-50 {
+			width: 50%;
+		}
+
+		&.mil-25 {
+			width: 25%;
+		}
+	}
+
+	@media screen and (max-width: 992px) {
+
+		& .grid-sizer,
+		& .mil-grid-item {
+			width: 100%;
+		}
+	}
+}
+
+
+.mil-portfolio-item {
+	display        : block;
+	cursor         : pointer;
+	color          : inherit;
+	text-decoration: none;
+
+	& .mil-cover {
+		position: relative;
+
+		&::after {
+			content       : "";
+			position      : absolute;
+			left          : 12px;
+			top           : 12px;
+			right         : -12px;
+			bottom        : -12px;
+			border        : 2px solid $dark;
+			pointer-events: none;
+			transform     : scale(1);
+			transition    : $tr;
+		}
+
+		& img {
+			position       : absolute;
+			top            : 0;
+			left           : 0;
+			width          : 100%;
+			height         : 100%;
+			object-fit     : cover;
+			object-position: center;
+			transform      : scale(1);
+			transition     : $tr;
+		}
+
+		& .mil-hover-link {
+			opacity         : 0;
+			position        : absolute;
+			top             : calc(50% - 30px);
+			left            : calc(50% - 30px);
+			background-color: $light;
+			border          : solid 2px $dark;
+			width           : 60px;
+			height          : 60px;
+			display         : flex;
+			align-items     : center;
+			justify-content : center;
+			box-shadow      : 6px 6px 0 0 $soft;
+			transition      : $tr;
+
+			& svg,
+			& i {
+				opacity   : 0;
+				stroke    : $dark;
+				transform : translateY(10px) scale(.6);
+				transition: $tr;
+			}
+
+			&:hover {
+				box-shadow: 0 0 0 0 $soft;
+			}
+		}
+	}
+
+	&.mil-square-item {
+		width: 100%;
+
+		& .mil-cover {
+			padding-bottom: 100%;
+
+		}
+	}
+
+	&.mil-long-item {
+		width: 100%;
+
+		& .mil-cover {
+			padding-bottom: 140%;
+
+		}
+	}
+
+	& .mil-project-descr {
+		padding-top: 35px;
+		text-align : center;
+	}
+
+	&:hover {
+		& .mil-cover {
+
+			&::after {
+				transform: scale(0.96);
+			}
+
+			& img {
+				transform: scale(0.93);
+			}
+
+			& .mil-hover-link {
+				opacity: 1;
+
+				& svg,
+				& i {
+					opacity  : 1;
+					transform: translateY(0) scale(1);
+				}
+			}
+		}
+	}
+}
+
+.mil-project-img {
+	width   : 100%;
+	position: relative;
+
+	& img {
+		position       : absolute;
+		top            : 0;
+		left           : 0;
+		width          : 100%;
+		height         : 100%;
+		object-fit     : cover;
+		object-position: center;
+	}
+
+	&.mil-square {
+		padding-bottom: 65%;
+	}
+
+	&.mil-long {
+		padding-bottom: calc(130% + 30px);
+	}
+}

@@ -1,0 +1,132 @@
+/* -------------------------------------------
+
+comments
+
+------------------------------------------- */
+.mil-comment {
+	list-style-type: none;
+
+	& .mil-comment-head {
+		display        : flex;
+		justify-content: space-between;
+		align-items    : center;
+		margin-bottom  : 30px;
+
+		& .mil-author {
+			display        : flex;
+			justify-content: flex-start;
+			align-items    : center;
+
+			& .mil-avatar {
+				position    : relative;
+				width       : 80px;
+				height      : 80px;
+				margin-right: 30px;
+
+				&::after {
+					content       : "";
+					position      : absolute;
+					left          : 7px;
+					top           : 7px;
+					right         : -7px;
+					bottom        : -7px;
+					border        : 2px solid $dark;
+					pointer-events: none;
+					transform     : scale(1);
+					transition    : $tr;
+				}
+
+				& img {
+					width          : 100%;
+					height         : 100%;
+					object-fit     : cover;
+					object-position: top;
+				}
+			}
+		}
+
+		& .mil-reply {
+			cursor         : pointer;
+			width          : 40px;
+			height         : 40px;
+			border         : solid 2px $soft;
+			display        : flex;
+			color          : $dark;
+			justify-content: center;
+			align-items    : center;
+			box-shadow     : 6px 6px 0 0 $soft;
+			transition     : $tr;
+
+			& svg {
+				width: 18px;
+			}
+
+			&:hover {
+				border    : solid 2px $dark;
+				box-shadow: 0px 0px 0 0 $soft;
+			}
+		}
+	}
+
+	& ul {
+		padding-left: 60px;
+		margin-top  : 30px;
+
+		& .mil-comment {
+			position: relative;
+
+			&:before {
+				content      : '';
+				display      : block;
+				width        : 15px;
+				height       : 45px;
+				border-left  : solid 2px $soft;
+				border-bottom: solid 2px $soft;
+				position     : absolute;
+				top          : 0;
+				left         : -32px;
+			}
+		}
+	}
+}
+
+
+.mil-comment-form {
+	position: relative;
+	padding : 30px;
+	border  : solid 2px $dark;
+
+	&::before {
+		content       : "";
+		position      : absolute;
+		left          : 5px;
+		right         : -9px;
+		top           : 5px;
+		bottom        : -9px;
+		border        : 2px solid $soft;
+		pointer-events: none;
+	}
+
+	&::after {
+		content    : '';
+		position   : absolute;
+		top        : 10px;
+		right      : 10px;
+		width      : 70px;
+		height     : 70px;
+		z-index    : -1;
+		--dot-size : 2px;
+		--dot-space: 10px;
+		background :
+			linear-gradient(90deg, $light calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+			linear-gradient($light calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+			$dark;
+		opacity       : 0.3;
+		pointer-events: none;
+	}
+
+}
+
+.mil-contact {
+	padding-bottom: 90px;
+}

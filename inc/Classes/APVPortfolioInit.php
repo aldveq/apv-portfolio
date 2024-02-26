@@ -25,6 +25,10 @@ if (!class_exists('APVPortfolioInit')) :
 				// Replace the version number of the theme on each release.
 				define('_S_VERSION', '1.0.0');
 			}
+
+			if (!defined('APV_PORTFOLIO_THEME_DIR')) {
+				define('APV_PORTFOLIO_THEME_DIR', get_template_directory_uri());
+			}
 		}
 
 		/**
@@ -154,14 +158,21 @@ if (!class_exists('APVPortfolioInit')) :
 		 */
 		public function apv_portfolio_scripts()
 		{
+			// CSS Styles
 			wp_enqueue_style('apv-portfolio-style', get_stylesheet_uri(), array(), _S_VERSION);
-			wp_style_add_data('apv-portfolio-style', 'rtl', 'replace');
+			wp_enqueue_style('apv-portfolio-bootstrap-grid', APV_PORTFOLIO_THEME_DIR . '/assets/css/bootstrap-grid.css', array(), _S_VERSION);
+			wp_enqueue_style('apv-portfolio-swiper', APV_PORTFOLIO_THEME_DIR . '/assets/css/swiper.min.css', array(), _S_VERSION);
+			wp_enqueue_style('apv-portfolio-magnific-popup', APV_PORTFOLIO_THEME_DIR . '/assets/css/magnific-popup.css', array(), _S_VERSION);
+			wp_enqueue_style('apv-portfolio-fontawesome-all', APV_PORTFOLIO_THEME_DIR . '/assets/css/fontawesome-all.min.css', array(), _S_VERSION);
+			wp_enqueue_style('apv-portfolio-main-sytle', APV_PORTFOLIO_THEME_DIR . '/build/index.css', array(), _S_VERSION);
 
-			wp_enqueue_script('apv-portfolio-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
-
-			if (is_singular() && comments_open() && get_option('thread_comments')) {
-				wp_enqueue_script('comment-reply');
-			}
+			// JS Scripts
+			wp_enqueue_script('apv-portfolio-jquery-validate', APV_PORTFOLIO_THEME_DIR . '/assets/js/jquery.validate.min.js', array('jquery'), _S_VERSION, true);
+			wp_enqueue_script('apv-portfolio-magnific-popup', APV_PORTFOLIO_THEME_DIR . '/assets/js/magnific-popup.js', array('jquery'), _S_VERSION, true);
+			wp_enqueue_script('apv-portfolio-one-page', APV_PORTFOLIO_THEME_DIR . '/assets/js/onepage.js', array(), _S_VERSION, true);
+			wp_enqueue_script('apv-portfolio-swiper', APV_PORTFOLIO_THEME_DIR . '/assets/js/swiper.min.js', array(), _S_VERSION, true);
+			wp_enqueue_script('apv-portfolio-isotope', APV_PORTFOLIO_THEME_DIR . '/assets/js/isotope.min.js', array(), _S_VERSION, true);
+			wp_enqueue_script('apv-portfolio-main', APV_PORTFOLIO_THEME_DIR . '/build/index.js', array('jquery'), _S_VERSION, true);
 		}
 	}
 endif;
