@@ -1,20 +1,20 @@
 /*global jQuery*/
 
-jQuery(document).ready(function ($) {
-	"use strict";
+jQuery( document ).ready( function( $ ) {
+	'use strict';
 
 	/**
-	   Image Popup
-   **/
-	$('.mfp-image').magnificPopup();
+	  Image Popup
+	 */
+	$( '.mfp-image' ).magnificPopup();
 
 	/*
 		Gallery popup
 	*/
-	$('.mfp-gallery').on('click', function () {
-		var gallery = $(this).attr('href');
+	$( '.mfp-gallery' ).on( 'click', function() {
+		const gallery = $( this ).attr( 'href' );
 
-		$(gallery).magnificPopup({
+		$( gallery ).magnificPopup( {
 			delegate: 'a',
 			type: 'image',
 			closeOnContentClick: false,
@@ -22,10 +22,10 @@ jQuery(document).ready(function ($) {
 			removalDelay: 160,
 			fixedContentPos: false,
 			gallery: {
-				enabled: true
-			}
-		}).magnificPopup('open');
+				enabled: true,
+			},
+		} ).magnificPopup( 'open' );
 
 		return false;
-	});
-});
+	} );
+} );
