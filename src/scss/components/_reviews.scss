@@ -4,33 +4,33 @@ reviews
 
 ------------------------------------------- */
 .mil-client {
-	width         : 100%;
+	width: 100%;
 	padding-bottom: 100%;
-	position      : relative;
+	position: relative;
 
 	&::after {
-		content : "";
+		content: "";
 		position: absolute;
-		left    : 12px;
-		top     : 12px;
-		right   : -12px;
-		bottom  : -12px;
-		border  : 2px solid $dark;
+		left: 12px;
+		top: 12px;
+		right: -12px;
+		bottom: -12px;
+		border: 2px solid $dark;
 	}
 
-	& img {
-		position       : absolute;
-		top            : 0;
-		left           : 0;
-		width          : 100%;
-		height         : 100%;
-		object-fit     : cover;
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 		object-position: top;
 	}
 
 	@media screen and (max-width: 1200px) {
-		width         : 120px;
+		width: 120px;
 		padding-bottom: 120px;
-		margin-bottom : 40px;
+		margin-bottom: 40px;
 	}
 }

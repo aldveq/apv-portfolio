@@ -4,69 +4,70 @@ blog
 
 ------------------------------------------- */
 .mil-blog-card {
-	display        : flex;
+	display: flex;
 	justify-content: space-between;
-	width          : 100%;
+	width: 100%;
 
-	& .mil-cover {
-		width         : 30%;
+	.mil-cover {
+		width: 30%;
 		padding-bottom: 30%;
-		position      : relative;
+		position: relative;
 
 		&::after {
-			content       : "";
-			position      : absolute;
-			left          : 12px;
-			top           : 12px;
-			right         : -12px;
-			bottom        : -12px;
-			border        : 2px solid $dark;
+			content: "";
+			position: absolute;
+			left: 12px;
+			top: 12px;
+			right: -12px;
+			bottom: -12px;
+			border: 2px solid $dark;
 			pointer-events: none;
-			transform     : scale(1);
-			transition    : $tr;
+			transform: scale(1);
+			transition: $tr;
 		}
 
-		& img {
-			position  : absolute;
-			width     : 100%;
-			height    : 100%;
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
 			object-fit: cover;
 			transition: $tr;
 		}
 
-		& .mil-date {
-			transform       : rotate(-90deg);
-			position        : absolute;
-			bottom          : 90px;
-			left            : -20px;
-			color           : $dark;
+		.mil-date {
+			transform: rotate(-90deg);
+			position: absolute;
+			bottom: 90px;
+			left: -20px;
+			color: $dark;
 			background-color: $light;
-			padding         : 4px 6px;
+			padding: 4px 6px;
 		}
 	}
 
-	& .mil-title {
-		padding        : 75px;
-		width          : 40%;
-		display        : flex;
-		flex-direction : column;
+	.mil-title {
+		padding: 75px;
+		width: 40%;
+		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
 	}
 
-	& .mil-card-text {
+	.mil-card-text {
 		padding-top: 110px;
-		width      : 30%;
-		align-self : stretch;
+		width: 30%;
+		align-self: stretch;
 	}
 
 	&:hover {
-		& .mil-cover {
+
+		.mil-cover {
 
 			&::after {
 				transform: scale(0.96);
 			}
 
-			& img {
+			img {
 				transform: scale(0.93);
 			}
 
@@ -76,78 +77,79 @@ blog
 	@media screen and (max-width: 992px) {
 		flex-direction: column;
 
-		& .mil-cover {
-			width         : 100%;
+		.mil-cover {
+			width: 100%;
 			padding-bottom: 60%;
 		}
 
-		& .mil-title {
-			width  : 100%;
-			padding: 50px 0px 30px;
+		.mil-title {
+			width: 100%;
+			padding: 50px 0 30px;
 		}
 
-		& .mil-card-text {
-			width      : 100%;
+		.mil-card-text {
+			width: 100%;
 			padding-top: 0;
 		}
 	}
 
 	@media screen and (max-width: 768px) {
-		& .mil-cover {
+
+		.mil-cover {
 			padding-bottom: 100%;
 		}
 	}
 }
 
 .mil-filter {
-	position       : relative;
-	display        : flex;
-	align-items    : center;
+	position: relative;
+	display: flex;
+	align-items: center;
 	justify-content: flex-end;
 
 	&::before {
-		content      : "";
-		position     : absolute;
-		top          : 0;
-		right        : 0;
-		width        : 70%;
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 70%;
 		border-bottom: 2px solid $dark;
 	}
 
 	&::after {
-		content      : "";
-		position     : absolute;
-		top          : 7px;
-		right        : -5px;
-		width        : 70%;
+		content: "";
+		position: absolute;
+		top: 7px;
+		right: -5px;
+		width: 70%;
 		border-bottom: 2px solid $soft;
 	}
 
-	& ul {
-		padding-left   : 30px;
-		display        : flex;
+	ul {
+		padding-left: 30px;
+		display: flex;
 		justify-content: flex-end;
 
-		& li {
-			position       : relative;
+		li {
+			position: relative;
 			list-style-type: none;
-			margin-right   : 40px;
-			height         : 80px;
-			display        : flex;
-			align-items    : center;
+			margin-right: 40px;
+			height: 80px;
+			display: flex;
+			align-items: center;
 
 			&:last-child {
 				margin-right: 30px;
 			}
 
-			& a {
+			a {
 				text-decoration: none;
-				color          : inherit;
-				font-size      : 14px;
-				line-height    : 100%;
-				text-transform : uppercase;
-				font-weight    : 600;
-				transition     : $tr;
+				color: inherit;
+				font-size: 14px;
+				line-height: 100%; /* stylelint-disable-line */
+				text-transform: uppercase;
+				font-weight: 600;
+				transition: $tr;
 
 				&:hover {
 					color: $accent;
@@ -157,13 +159,13 @@ blog
 					color: $accent;
 
 					&::after {
-						content         : '';
-						display         : block;
-						position        : absolute;
-						top             : 0;
-						left            : calc(50% - 1px);
-						width           : 2px;
-						height          : 15px;
+						content: "";
+						display: block;
+						position: absolute;
+						top: 0;
+						left: calc(50% - 1px);
+						width: 2px;
+						height: 15px;
 						background-color: $dark;
 					}
 				}
@@ -179,19 +181,19 @@ blog
 		}
 
 		&::after {
-			left : 7px;
+			left: 7px;
 			right: -7px;
 			width: auto;
 		}
 
-		& ul {
-			padding       : 30px 0;
+		ul {
+			padding: 30px 0;
 			flex-direction: column;
-			width         : 100%;
+			width: 100%;
 
-			& li {
-				height       : auto;
-				margin       : 0;
+			li {
+				height: auto;
+				margin: 0;
 				margin-bottom: 15px;
 
 				&:last-child {
@@ -199,8 +201,10 @@ blog
 				}
 
 				a {
+
 					&.mil-current {
-						&:after {
+
+						&::after {
 							display: none;
 						}
 					}
@@ -211,57 +215,58 @@ blog
 }
 
 .mil-pagination-panel {
-	position       : relative;
-	padding        : 90px 0 60px;
-	border-top     : solid 2px $dark;
-	display        : flex;
+	position: relative;
+	padding: 90px 0 60px;
+	border-top: solid 2px $dark;
+	display: flex;
 	justify-content: space-between;
 
 	&::before {
-		content      : "";
-		position     : absolute;
-		top          : 5px;
-		right        : -5px;
-		left         : 5px;
+		content: "";
+		position: absolute;
+		top: 5px;
+		right: -5px;
+		left: 5px;
 		border-bottom: 2px solid $soft;
 	}
 
-	& .mil-pagination-numbers {
+	.mil-pagination-numbers {
 		display: flex;
 
-		& li {
+		li {
 			list-style-type: none;
-			margin-right   : 15px;
+			margin-right: 15px;
 
 			&:last-child {
 				margin-right: 0;
 			}
 
-			& a {
+			a {
 				text-decoration: none;
-				cursor         : pointer;
-				width          : 60px;
-				height         : 60px;
-				border         : solid 2px $dark;
-				font-weight    : 600;
-				font-size      : 14px;
-				color          : $dark;
-				display        : flex;
+				cursor: pointer;
+				width: 60px;
+				height: 60px;
+				border: solid 2px $dark;
+				font-weight: 600;
+				font-size: 14px;
+				color: $dark;
+				display: flex;
 				justify-content: center;
-				align-items    : center;
-				box-shadow     : 6px 6px 0 0 $soft;
-				transition     : $tr;
+				align-items: center;
+				box-shadow: 6px 6px 0 0 $soft;
+				transition: $tr;
 
 				&:hover {
-					box-shadow: 0px 0px 0 0 $soft;
+					box-shadow: 0 0 0 0 $soft;
 				}
 			}
 
 			&.mil-active {
-				& a {
+
+				a {
 					background-color: $accent;
-					color           : $light;
-					border-color    : $accent;
+					color: $light;
+					border-color: $accent;
 				}
 			}
 		}
@@ -269,16 +274,16 @@ blog
 
 	@media screen and (max-width: 767px) {
 		flex-direction: column;
-		align-items   : center;
+		align-items: center;
 
-		& .mil-pagination-numbers {
+		.mil-pagination-numbers {
 			margin-bottom: 15px;
 		}
 	}
 }
 
 .mil-publication {
-	padding-top   : 185px;
+	padding-top: 185px;
 	padding-bottom: 90px;
 
 	@media screen and (max-width: 1200px) {
@@ -287,47 +292,47 @@ blog
 }
 
 .mil-post-cover {
-	position      : relative;
+	position: relative;
 	padding-bottom: 60%;
 
 	&::after {
-		content       : "";
-		position      : absolute;
-		left          : 12px;
-		top           : 12px;
-		right         : -12px;
-		bottom        : -12px;
-		border        : 2px solid $dark;
+		content: "";
+		position: absolute;
+		left: 12px;
+		top: 12px;
+		right: -12px;
+		bottom: -12px;
+		border: 2px solid $dark;
 		pointer-events: none;
-		transform     : scale(1);
-		transition    : $tr;
+		transform: scale(1);
+		transition: $tr;
 	}
 
-	& img {
-		position       : absolute;
-		top            : 0;
-		left           : 0;
-		width          : 100%;
-		height         : 100%;
-		object-fit     : cover;
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 		object-position: center;
 	}
 }
 
 .mil-tags {
-	display    : flex;
-	flex-wrap  : wrap;
+	display: flex;
+	flex-wrap: wrap;
 	margin-left: 40px;
 
-	& li {
+	li {
 		list-style-type: none;
-		margin-right   : 40px;
-		margin-bottom  : 15px;
+		margin-right: 40px;
+		margin-bottom: 15px;
 
-		& a {
+		a {
 			text-decoration: none;
-			color          : inherit;
-			transition     : $tr;
+			color: inherit;
+			transition: $tr;
 
 			&:hover {
 				color: $accent;

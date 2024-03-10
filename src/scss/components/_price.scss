@@ -5,91 +5,91 @@ price
 ------------------------------------------- */
 .mil-price-card {
 	position: relative;
-	width   : 100%;
-	border  : solid 2px $dark;
+	width: 100%;
+	border: solid 2px $dark;
 
 	&::before,
 	&::after {
-		content    : '';
-		position   : absolute;
-		top        : 10px;
-		right      : 10px;
-		width      : 70px;
-		height     : 70px;
-		z-index    : -1;
-		--dot-size : 2px;
+		content: "";
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		width: 70px;
+		height: 70px;
+		z-index: -1;
+		--dot-size: 2px;
 		--dot-space: 10px;
-		background :
+		background:
 			linear-gradient(90deg, $light calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
 			linear-gradient($light calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
 			$dark;
-		opacity       : 0.3;
+		opacity: 0.3;
 		pointer-events: none;
 	}
 
 	&::after {
-		top   : auto;
+		top: auto;
 		bottom: 10px;
-		right : auto;
-		left  : 10px;
+		right: auto;
+		left: 10px;
 	}
 
-	& .mil-card-head {
-		position     : relative;
-		padding      : 30px;
+	.mil-card-head {
+		position: relative;
+		padding: 30px;
 		border-bottom: solid 2px $dark;
 
 		&::before {
-			content       : "";
-			position      : absolute;
-			left          : 5px;
-			right         : -9px;
-			top           : 5px;
-			bottom        : -9px;
-			border        : 2px solid $soft;
+			content: "";
+			position: absolute;
+			left: 5px;
+			right: -9px;
+			top: 5px;
+			bottom: -9px;
+			border: 2px solid $soft;
 			pointer-events: none;
 		}
 
-		& .mil-label {
-			position        : absolute;
-			top             : 25px;
-			right           : 30px;
-			color           : $light;
+		.mil-label {
+			position: absolute;
+			top: 25px;
+			right: 30px;
+			color: $light;
 			background-color: $accent;
-			padding         : 4px 6px;
+			padding: 4px 6px;
 		}
 
 		sup {
-			font-size     : 14px;
-			line-height   : 20px;
-			display       : inline-block;
+			font-size: 14px;
+			line-height: 20px;
+			display: inline-block;
 			vertical-align: top;
 		}
 	}
 
-	& .mil-proces-body {
+	.mil-proces-body {
 		position: relative;
-		padding : 30px;
+		padding: 30px;
 
 		&::before {
-			content       : "";
-			position      : absolute;
-			left          : 5px;
-			right         : -9px;
-			top           : 7px;
-			bottom        : -9px;
-			border        : 2px solid $soft;
-			border-top    : none;
+			content: "";
+			position: absolute;
+			left: 5px;
+			right: -9px;
+			top: 7px;
+			bottom: -9px;
+			border: 2px solid $soft;
+			border-top: none;
 			pointer-events: none;
 		}
 
-		& ul {
+		ul {
 			margin-bottom: 30px;
 
-			& li {
+			li {
 				list-style-type: none;
-				padding        : 10px 0;
-				border-bottom  : 1px solid $soft;
+				padding: 10px 0;
+				border-bottom: 1px solid $soft;
 
 				&:last-child {
 					border: none;
@@ -97,7 +97,7 @@ price
 			}
 		}
 
-		& .mil-button {
+		.mil-button {
 			width: 100%;
 		}
 	}

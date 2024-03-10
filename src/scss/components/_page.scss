@@ -6,51 +6,52 @@ page
 .mil-onepage {
 	width: 100%;
 
-	& .mil-section {
-		position         : relative;
-		height           : 100vh;
-		width            : 100%;
-		display          : -webkit-box;
-		display          : -ms-flexbox;
-		display          : flex;
-		-webkit-box-pack : center;
-		-ms-flex-pack    : center;
-		justify-content  : center;
+	.mil-section {
+		position: relative;
+		height: 100vh;
+		width: 100%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
 		-webkit-box-align: center;
-		-ms-flex-align   : center;
-		align-items      : center;
+		-ms-flex-align: center;
+		align-items: center;
 
-		& .container,
-		& .no-gutters {
-			-webkit-transform       : translateY(90px) scale(0.95);
-			transform               : translateY(90px) scale(0.95);
-			opacity                 : 0;
-			-webkit-transition      : 0.4s cubic-bezier(0, 0, 0.3642, 1);
-			transition              : 0.4s cubic-bezier(0, 0, 0.3642, 1);
+		.container,
+		.no-gutters {
+			-webkit-transform: translateY(90px) scale(0.95);
+			transform: translateY(90px) scale(0.95);
+			opacity: 0;
+			-webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+			transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
 			-webkit-transition-delay: 0s;
-			transition-delay        : 0s;
+			transition-delay: 0s;
 		}
 
 		&.mil-active {
 
-			& .container,
-			& .no-gutters {
-				opacity                 : 1;
-				-webkit-transform       : translateY(0) scale(1);
-				transform               : translateY(0) scale(1);
+			.container,
+			.no-gutters {
+				opacity: 1;
+				-webkit-transform: translateY(0) scale(1);
+				transform: translateY(0) scale(1);
 				-webkit-transition-delay: 0.4s;
-				transition-delay        : 0.4s;
+				transition-delay: 0.4s;
 			}
 		}
 
 	}
 
 	@media screen and (max-width: 1200px) {
-		& .mil-section {
+
+		.mil-section {
 			height: auto;
 
-			& .container {
-				opacity  : 1;
+			.container {
+				opacity: 1;
 				transform: translateY(0) scale(1);
 			}
 		}
@@ -67,7 +68,7 @@ page
 
 .mil-page {
 	position: relative;
-	margin  : 20px;
+	margin: 20px;
 
 	@media screen and (max-width: 1200px) {
 		margin: 0;

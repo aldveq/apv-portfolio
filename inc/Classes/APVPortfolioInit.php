@@ -180,12 +180,13 @@ if (!class_exists('APVPortfolioInit')) :
 		public function apv_portfolio_scripts()
 		{
 			// CSS Styles
-			wp_enqueue_style('apv-portfolio-style', get_stylesheet_uri(), array(), _S_VERSION);
-			wp_enqueue_style('apv-portfolio-bootstrap-grid', APV_PORTFOLIO_THEME_DIR . '/assets/css/bootstrap-grid.css', array(), _S_VERSION);
-			wp_enqueue_style('apv-portfolio-swiper', APV_PORTFOLIO_THEME_DIR . '/assets/css/swiper.min.css', array(), _S_VERSION);
-			wp_enqueue_style('apv-portfolio-magnific-popup', APV_PORTFOLIO_THEME_DIR . '/assets/css/magnific-popup.css', array(), _S_VERSION);
-			wp_enqueue_style('apv-portfolio-fontawesome-all', APV_PORTFOLIO_THEME_DIR . '/assets/css/fontawesome-all.min.css', array(), _S_VERSION);
-			wp_enqueue_style('apv-portfolio-main-sytle', APV_PORTFOLIO_THEME_DIR . '/build/index.css', array(), _S_VERSION);
+			wp_enqueue_style('apv-portfolio-google-font', 'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap', array(), _S_VERSION, 'screen');
+			wp_enqueue_style('apv-portfolio-style', get_stylesheet_uri(), array(), _S_VERSION, 'screen');
+			wp_enqueue_style('apv-portfolio-bootstrap-grid', APV_PORTFOLIO_THEME_DIR . '/assets/css/bootstrap-grid.css', array(), _S_VERSION, 'screen');
+			wp_enqueue_style('apv-portfolio-swiper', APV_PORTFOLIO_THEME_DIR . '/assets/css/swiper.min.css', array(), _S_VERSION, 'screen');
+			wp_enqueue_style('apv-portfolio-magnific-popup', APV_PORTFOLIO_THEME_DIR . '/assets/css/magnific-popup.css', array(), _S_VERSION, 'screen');
+			wp_enqueue_style('apv-portfolio-fontawesome-all', APV_PORTFOLIO_THEME_DIR . '/assets/css/fontawesome-all.min.css', array(), _S_VERSION, 'screen');
+			wp_enqueue_style('apv-portfolio-main-sytle', APV_PORTFOLIO_THEME_DIR . '/build/index.css', array(), _S_VERSION, 'screen');
 
 			// JS Scripts
 			wp_enqueue_script('apv-portfolio-jquery-validate', APV_PORTFOLIO_THEME_DIR . '/assets/js/jquery.validate.min.js', array('jquery'), _S_VERSION, true);
