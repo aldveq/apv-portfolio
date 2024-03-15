@@ -1,36 +1,33 @@
 <?php
-
 /**
- * Singleton class which implements Singleton pattern in any class in which this class is used.
+ * Class APV Portfolio Singleton Pattern Class
  *
- * Using the singleton pattern in WordPress is an easy way to protect against
- * mistakes caused by creating multiple objects or multiple initialization
- * of classes which need to be initialized only once.
+ * Singleton class which implements Singleton pattern
+ * in any class in which this class is used.
  *
- * With complex plugins, there are many cases where multiple copies of
- * the plugin would load, and action hooks would load (and trigger) multiple
- * times.
+ * PHP version 8
  *
- * If you're planning on using a global variable, then you should implement
- * this class. Singletons are a way to safely use globals; they let you
- * access and set the global from anywhere, without risk of collision.
- *
- * If any method in a class needs to be aware of "state", then you should
- * implement this class in that class.
- *
- * If any method in the class need to "talk" to another or be aware of what
- * another method has done, then you should implement this class in that class.
- *
- * If you specifically need multiple objects, then use a normal class.
- *
- * @package APV_Portfolio
+ * @category Themes
+ * @package  APV_Portfolio
+ * @author   Aldo Paz Velasquez <aldveq80@gmail.com>
+ * @license  GPL-2.0-or-later http://www.gnu.org/licenses/gpl-2.0.txt
+ * @link     https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 
 namespace APVPortfolio\Classes;
 
-if (!class_exists('APVPortfolioSingleton')) :
-	class APVPortfolioSingleton
-	{
+if ( ! class_exists( 'APVPortfolioSingleton' ) ) :
+	/**
+	 * Class APV Portfolio Singleton Pattern Class
+	 *
+	 * @category Themes
+	 * @package  APV_Portfolio
+	 * @author   Aldo Paz Velasquez <aldveq80@gmail.com>
+	 * @license  GPL-2.0-or-later https://www.gnu.org/licenses/gpl-2.0.txt
+	 * @link     https://developer.wordpress.org/plugins/plugin-basics/
+	 */
+	class APVPortfolioSingleton {
+
 
 		/**
 		 * Protected class constructor to prevent direct object creation
@@ -39,15 +36,13 @@ if (!class_exists('APVPortfolioSingleton')) :
 		 * this class. This is ideal for doing stuff that you only want to
 		 * do once, such as hooking into actions and filters, etc.
 		 */
-		protected function __construct()
-		{
+		protected function __construct() {
 		}
 
 		/**
 		 * Prevent object cloning
 		 */
-		final protected function __clone()
-		{
+		final protected function __clone() {
 		}
 
 		/**
@@ -57,15 +52,14 @@ if (!class_exists('APVPortfolioSingleton')) :
 		 *
 		 * @return object Singleton instance of the class.
 		 */
-		final public static function get_instance()
-		{
+		final public static function get_instance() {
 
 			/**
 			 * Collection of instance.
 			 *
 			 * @var array
 			 */
-			static $instance = [];
+			static $instance = array();
 
 			/**
 			 * If this class is implemented in a class which has multiple
@@ -77,11 +71,11 @@ if (!class_exists('APVPortfolioSingleton')) :
 			 */
 			$called_class = get_called_class();
 
-			if (!isset($instance[$called_class])) {
-				$instance[$called_class] = new $called_class();
+			if ( ! isset( $instance[ $called_class ] ) ) {
+				$instance[ $called_class ] = new $called_class();
 			}
 
-			return $instance[$called_class];
+			return $instance[ $called_class ];
 		}
 	} // End class
 endif;

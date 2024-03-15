@@ -1,5 +1,4 @@
 <?php
-
 /**
  * APV Portfolio functions and definitions
  *
@@ -10,6 +9,6 @@
 
 use APVPortfolio\Classes\APVPortfolioInit;
 
-require_once dirname(__FILE__) . '/vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 APVPortfolioInit::get_instance();
