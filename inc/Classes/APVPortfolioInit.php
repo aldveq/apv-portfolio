@@ -32,6 +32,9 @@ if ( ! class_exists( 'APVPortfolioInit' ) ) :
 		protected function __construct() {
 			$this->define_constants();
 
+			// Loading Classes
+			APVPortfolioUtilities::get_instance();
+
 			add_action( 'after_setup_theme', array( $this, 'apv_portfolio_setup' ) );
 			add_action( 'after_setup_theme', array( $this, 'apv_portfolio_content_width' ), 0 );
 			add_action( 'widgets_init', array( $this, 'apv_portfolio_widgets_init' ) );
@@ -118,7 +121,7 @@ if ( ! class_exists( 'APVPortfolioInit' ) ) :
 			// This theme uses wp_nav_menu() in one location.
 			register_nav_menus(
 				array(
-					'menu-1' => esc_html__( 'Primary', 'apv-portfolio' ),
+					'primary-menu' => esc_html__( 'Primary Menu', 'apv-portfolio' ),
 				)
 			);
 
@@ -168,6 +171,13 @@ if ( ! class_exists( 'APVPortfolioInit' ) ) :
 					'flex-height' => true,
 				)
 			);
+
+			/**
+			 * Adding cutom image sizings.
+			 *
+			 * @return void
+			 */
+			add_image_size( 'brand-size', 100, 22, false );
 		}
 
 		/**

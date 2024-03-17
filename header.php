@@ -9,6 +9,8 @@
  * @package APV_Portfolio
  */
 
+// Variables & Classes Imports.
+use APVPortfolio\Classes\APVPortfolioUtilities;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -20,40 +22,94 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class( 'mil-custom-scroll' ); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'apv-portfolio' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$apv_portfolio_description = get_bloginfo( 'description', 'display' );
-			if ( $apv_portfolio_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $apv_portfolio_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+	<!-- frame -->
+	<div class="mil-frame">
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'apv-portfolio' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+		<!-- top panel -->
+		<header class="mil-top-panel mil-tp-2">
+			<div class="mil-tp-frame">
+				<?php
+					$header_brand_logo_id = get_theme_mod( 'custom_logo' );
+
+				if ( ! empty( $header_brand_logo_id ) ) :
+					?>
+					<a href="index.html" class="mil-logo">
+					<?php
+						echo wp_get_attachment_image(
+							$header_brand_logo_id,
+							'brand-size',
+							false,
+							null
+						);
+					?>
+					</a>
+					<?php
+					endif;
+				?>
+
+				<?php
+					$primary_menu_items = APVPortfolioUtilities::get_menu_items_by_location( 'primary-menu' );
+
+				if ( is_array( $primary_menu_items ) && count( $primary_menu_items ) > 0 ) :
+					?>
+					<nav>
+						<ul>
+						<?php
+						foreach ( $primary_menu_items as $primary_nav_item ) :
+							?>
+								<li class="<?php echo $primary_nav_item['is_active'] ? esc_attr( 'mil-active' ) : ''; ?>">
+									<a href="<?php echo esc_url( $primary_nav_item['url'] ); ?>" target="_self"><?php echo esc_html( $primary_nav_item['title'] ); ?></a>
+								</li>
+							<?php
+								endforeach;
+						?>
+						</ul>
+					</nav>
+					<?php
+					endif;
+				?>
+				<div class="mil-menu-btn">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="mil-social">
+				<ul>
+					<li>
+						<a href="https://facebook.com" target="_blank" class="social-icon">
+							<i class="fab fa-facebook"></i>
+						</a>
+					</li>
+					<li>
+						<a href="https://instagram.com" target="_blank" class="social-icon">
+							<i class="fab fa-instagram"></i>
+						</a>
+					</li>
+					<li>
+						<a href="https://linkedin.com" target="_blank" class="social-icon">
+							<i class="fab fa-linkedin-in"></i>
+						</a>
+					</li>
+					<li>
+						<a href="https://youtube.com" target="_blank" class="social-icon">
+							<i class="fab fa-youtube"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</header>
+		<!-- top panel end -->
+
+		<!-- footer -->
+		<div class="mil-footer">
+			<p class="mil-upper mil-upper-sm">© 2024 <span class="mil-accent">Treto.</span> All rights reserved.</p>
+		</div>
+		<!-- footer end -->
+
+	</div>
+	<!-- frame end -->
