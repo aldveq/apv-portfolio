@@ -4,20 +4,24 @@ document.addEventListener('DOMContentLoaded', function () {
 	let index = 0;
 	let scrolling = false;
 
-	function scrollToSection(index) {
-		scrolling = true;
-		window.scrollTo({
-			top: index * window.innerHeight,
-			behavior: 'smooth'
-		});
+	function scrollToSection( index ) {
+		if ( index ) {
+			scrolling = true;
+			window.scrollTo({
+				top: index * window.innerHeight,
+				behavior: 'smooth'
+			});
 
-		updateActiveDot(index);
-		updateActiveSection(index);
+			updateActiveDot(index);
+			updateActiveSection(index);
+		}
 	}
 
 	function updateActiveDot(index) {
-		dots.forEach(dot => dot.classList.remove('mil-active'));
-		dots[index].classList.add('mil-active');
+		if ( dots ) {
+			dots.forEach(dot => dot.classList.remove('mil-active'));
+			dots[index].classList.add('mil-active');
+		}
 	}
 
 	function updateActiveSection(index) {
