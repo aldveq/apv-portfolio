@@ -32,13 +32,16 @@ if ( ! class_exists( 'APVPortfolioInit' ) ) :
 		protected function __construct() {
 			$this->define_constants();
 
-			// Loading Classes
+			// Loading Classes.
+			APVPortfolioCBFSetup::get_instance();
+			APVPortfolioThemeOptions::get_instance();
 			APVPortfolioUtilities::get_instance();
 
 			add_action( 'after_setup_theme', array( $this, 'apv_portfolio_setup' ) );
 			add_action( 'after_setup_theme', array( $this, 'apv_portfolio_content_width' ), 0 );
 			add_action( 'widgets_init', array( $this, 'apv_portfolio_widgets_init' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'apv_portfolio_scripts' ) );
+			add_action( 'wp_head', array( $this, 'apv_portfolio_hook_variables' ) );
 
 			// Remove emoji support.
 			remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
@@ -230,6 +233,37 @@ if ( ! class_exists( 'APVPortfolioInit' ) ) :
 			wp_enqueue_script( 'apv-portfolio-swiper', APV_PORTFOLIO_THEME_DIR . '/assets/js/swiper.min.js', array(), _S_VERSION, true );
 			wp_enqueue_script( 'apv-portfolio-isotope', APV_PORTFOLIO_THEME_DIR . '/assets/js/isotope.min.js', array(), _S_VERSION, true );
 			wp_enqueue_script( 'apv-portfolio-main', APV_PORTFOLIO_THEME_DIR . '/build/index.js', array( 'jquery' ), _S_VERSION, true );
+		}
+
+		/**
+		 * APV Portfolio Hook Variables
+		 *
+		 * @return void
+		 */
+		public function apv_portfolio_hook_variables() {
+			$apv_accent_color       = carbon_get_theme_option( 'apv_accent_color' );
+			$apv_accent_light_color = carbon_get_theme_option( 'apv_accent_light_color' );
+			$apv_light_color        = carbon_get_theme_option( 'apv_light_color' );
+			$apv_soft_color         = carbon_get_theme_option( 'apv_soft_color' );
+			$apv_gray_color         = carbon_get_theme_option( 'apv_gray_color' );
+			$apv_dark_color         = carbon_get_theme_option( 'apv_dark_color' );
+			$apv_black_color        = carbon_get_theme_option( 'apv_black_color' );
+			?>
+			<style type="text/css" media="screen">
+				/* Start - Theme Variables */
+				:root {
+					/*Colors*/
+					--accent-color: <?php echo esc_html( $apv_accent_color ); ?>;
+					--accent-light-rgb-color: <?php echo esc_html( APVPortfolioUtilities::rgb2hex2rgb( $apv_accent_light_color ) ); ?>;
+					--light-color: <?php echo esc_html( $apv_light_color ); ?>;
+					--soft-rgb-color: <?php echo esc_html( APVPortfolioUtilities::rgb2hex2rgb( $apv_soft_color ) ); ?>;
+					--gray-color: <?php echo esc_html( $apv_gray_color ); ?>;
+					--dark-color: <?php echo esc_html( $apv_dark_color ); ?>;
+					--black-color: <?php echo esc_html( $apv_black_color ); ?>;
+				}
+				/* End - Theme Variables */
+			</style>
+			<?php
 		}
 	}
 endif;
