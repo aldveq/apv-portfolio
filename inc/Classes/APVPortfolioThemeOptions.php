@@ -87,21 +87,34 @@ if ( ! class_exists( 'APVPortfolioThemeOptions' ) ) :
 					__( 'Contact Information', 'apv-portfolio' ),
 					array(
 						Field::make( 'separator', 'separator_emails', __( 'Emails', 'apv-portfolio' ) ),
-						Field::make( 'text', 'apv_primary_email_label', __( 'Primary Email Label', 'apv-portfolio' ) )
-							->set_width( 50 ),
-						Field::make( 'text', 'apv_primary_email', __( 'Primary Email', 'apv-portfolio' ) )
-							->set_width( 50 ),
+						Field::make( 'complex', 'apv_emails_data', __( 'Emails', 'apv-portfolio' ) )
+							->set_layout( 'tabbed-horizontal' )
+							->add_fields(
+								array(
+									Field::make( 'text', 'apv_primary_email_label', __( 'Label', 'apv-portfolio' ) )
+										->set_width( 50 ),
+									Field::make( 'text', 'apv_primary_email', __( 'Email', 'apv-portfolio' ) )
+										->set_width( 50 ),
+								)
+							),
 						Field::make( 'separator', 'separator_phones', __( 'Phones', 'apv-portfolio' ) ),
-						Field::make( 'text', 'apv_primary_phone_label', __( 'Primary Phone Label', 'apv-portfolio' ) )
-							->set_width( 50 ),
-						Field::make( 'text', 'apv_primary_phone', __( 'Primary Phone', 'apv-portfolio' ) )
-							->set_width( 50 ),
+						Field::make( 'complex', 'apv_phones_data', __( 'Phones', 'apv-portfolio' ) )
+							->set_layout( 'tabbed-horizontal' )
+							->add_fields(
+								array(
+									Field::make( 'text', 'apv_primary_phone_label', __( 'Label', 'apv-portfolio' ) )
+											->set_width( 50 ),
+									Field::make( 'text', 'apv_primary_phone', __( 'Phone', 'apv-portfolio' ) )
+										->set_width( 50 ),
+								)
+							),
 						Field::make( 'separator', 'separator_address', __( 'Address', 'apv-portfolio' ) ),
-						Field::make( 'text', 'apv_label_address', __( 'Address', 'apv-portfolio' ) )
-							->set_width( 50 ),
-						Field::make( 'text', 'apv_address_link', __( 'Address URL', 'apv-portfolio' ) )
-							->set_width( 50 )
-							->help_text( __( 'Optional', 'apv-portfolio' ) ),
+						Field::make( 'rich_text', 'apv_label_address', __( 'Address', 'apv-portfolio' ) )
+							->set_settings(
+								array(
+									'media_buttons' => false,
+								)
+							),
 					)
 				)
 				->add_tab(
