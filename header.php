@@ -13,6 +13,7 @@
 use APVPortfolio\Classes\APVPortfolioUtilities;
 
 $apv_footer_copyright_text = carbon_get_theme_option( 'apv_footer_copyright_text' );
+$apv_socials_data          = carbon_get_theme_option( 'socials_data' );
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -80,30 +81,31 @@ $apv_footer_copyright_text = carbon_get_theme_option( 'apv_footer_copyright_text
 				</div>
 			</div>
 
-			<div class="mil-social">
-				<ul>
-					<li>
-						<a href="https://facebook.com" target="_blank" class="social-icon">
-							<i class="fab fa-facebook"></i>
-						</a>
-					</li>
-					<li>
-						<a href="https://instagram.com" target="_blank" class="social-icon">
-							<i class="fab fa-instagram"></i>
-						</a>
-					</li>
-					<li>
-						<a href="https://linkedin.com" target="_blank" class="social-icon">
-							<i class="fab fa-linkedin-in"></i>
-						</a>
-					</li>
-					<li>
-						<a href="https://youtube.com" target="_blank" class="social-icon">
-							<i class="fab fa-youtube"></i>
-						</a>
-					</li>
-				</ul>
-			</div>
+			<?php
+			if ( is_array( $apv_socials_data ) && count( $apv_socials_data ) > 0 ) :
+				?>
+				<div class="mil-social">
+					<ul>
+						<?php
+						foreach ( $apv_socials_data as $social ) :
+							?>
+							<li>
+								<a 
+									href="<?php echo esc_url( $social['social_url'] ); ?>"
+									target="_blank" 
+									class="social-icon"
+								>
+									<i class="<?php echo esc_attr( $social['social_icon']['class'] ); ?>"></i>
+								</a>
+							</li>
+							<?php
+						endforeach;
+						?>
+					</ul>
+				</div>
+				<?php
+				endif;
+			?>
 		</header>
 		<!-- top panel end -->
 
