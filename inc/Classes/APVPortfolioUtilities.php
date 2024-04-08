@@ -27,6 +27,13 @@ if ( ! class_exists( 'APVPortfolioUtilities' ) ) :
 	class APVPortfolioUtilities extends APVPortfolioSingleton {
 
 		/**
+		 *  APV Portfolio Utilities Construct function
+		 */
+		protected function __construct() {
+			add_action( 'init', array( $this, 'apv_setup_shortcode_current_year' ) );
+		}
+
+		/**
 		 * Get Menu Id by Location
 		 *
 		 * @param string $menu_location Menu Location.
@@ -114,6 +121,39 @@ if ( ! class_exists( 'APVPortfolioUtilities' ) ) :
 			}
 
 			return $result;
+		}
+
+		/**
+		 * Setup Shortcode for Current Year
+		 *
+		 * @return void
+		 */
+		public function apv_setup_shortcode_current_year() {
+			add_shortcode( 'year', array( $this, 'shortcode_get_current_year' ) );
+		}
+
+		/**
+		 * Current year shortcode
+		 *
+		 * @return string Year
+		 */
+		public static function shortcode_get_current_year() {
+			return current_time( 'Y' );
+		}
+
+		/**
+		 * Highlight Text With Primary Color
+		 *
+		 * @param string $text Text.
+		 *
+		 * @return string
+		 */
+		public static function highlight_text_with_accent_color( $text ) {
+			return preg_replace(
+				'~__\*(.*?)\*__~s',
+				'<span class="mil-accent">$1</span>',
+				$text
+			);
 		}
 	}
 endif;

@@ -11,6 +11,8 @@
 
 // Variables & Classes Imports.
 use APVPortfolio\Classes\APVPortfolioUtilities;
+
+$apv_footer_copyright_text = carbon_get_theme_option( 'apv_footer_copyright_text' );
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -106,9 +108,19 @@ use APVPortfolio\Classes\APVPortfolioUtilities;
 		<!-- top panel end -->
 
 		<!-- footer -->
-		<div class="mil-footer">
-			<p class="mil-upper mil-upper-sm">© 2024 <span class="mil-accent">Treto.</span> All rights reserved.</p>
-		</div>
+		<?php
+		if ( ! empty( $apv_footer_copyright_text ) ) :
+			?>
+			<div class="mil-footer">
+				<p class="mil-upper mil-upper-sm">
+					<?php
+						echo do_shortcode( APVPortfolioUtilities::highlight_text_with_accent_color( $apv_footer_copyright_text ) );
+					?>
+				</p>
+			</div>
+			<?php
+		endif;
+		?>
 		<!-- footer end -->
 
 	</div>

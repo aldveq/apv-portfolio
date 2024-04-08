@@ -139,6 +139,13 @@ if ( ! class_exists( 'APVPortfolioThemeOptions' ) ) :
 								)
 							),
 					)
+				)
+				->add_tab(
+					__( 'Footer', 'apv-portfolio' ),
+					array(
+						Field::make( 'text', 'apv_footer_copyright_text', __( 'Footer Copyright', 'apv-portfolio' ) )
+							->help_text( __( 'Use shortcode [year] to display the current year. <br> Wrap text in __* to distinguish it with the global accent color. Example: The wrapped text has a __*different color*__.', 'apv-portfolio' ) ),
+					)
 				);
 		}
 	}
