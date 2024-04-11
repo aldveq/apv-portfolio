@@ -35,6 +35,7 @@ if ( ! class_exists( 'APVPortfolioInit' ) ) :
 			// Loading Classes.
 			APVPortfolioCBFSetup::get_instance();
 			APVPortfolioThemeOptions::get_instance();
+			APVPortfolioGutenbergBlocks::get_instance();
 			APVPortfolioUtilities::get_instance();
 
 			add_action( 'after_setup_theme', array( $this, 'apv_portfolio_setup' ) );
@@ -42,6 +43,8 @@ if ( ! class_exists( 'APVPortfolioInit' ) ) :
 			add_action( 'widgets_init', array( $this, 'apv_portfolio_widgets_init' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'apv_portfolio_scripts' ) );
 			add_action( 'wp_head', array( $this, 'apv_portfolio_hook_variables' ) );
+			add_action( 'admin_head', array( $this, 'apv_portfolio_hook_variables' ) );
+			add_action( 'enqueue_block_editor_assets', array( $this, 'apv_portfolio_editor_block_assets' ) );
 
 			// Remove emoji support.
 			remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
@@ -181,6 +184,7 @@ if ( ! class_exists( 'APVPortfolioInit' ) ) :
 			 * @return void
 			 */
 			add_image_size( 'brand-size', 100, 22, false );
+			add_image_size( 'hero-image-size', 835, 1080, true );
 		}
 
 		/**
@@ -264,6 +268,17 @@ if ( ! class_exists( 'APVPortfolioInit' ) ) :
 				/* End - Theme Variables */
 			</style>
 			<?php
+		}
+
+		/**
+		 * Enqueing Assets for Gutenberg Editor
+		 *
+		 * @return void
+		 */
+		public function apv_portfolio_editor_block_assets() {
+			wp_enqueue_style( 'apv-portfolio-block-editor-styles', get_template_directory_uri() . '/editor/style.css', array(), _S_VERSION, 'screen' );
+			wp_enqueue_style( 'apv-portfolio-bootstrap-grid', APV_PORTFOLIO_THEME_DIR . '/assets/css/bootstrap-grid.css', array(), _S_VERSION, 'screen' );
+			wp_enqueue_style( 'apv-portfolio-main-sytle', APV_PORTFOLIO_THEME_DIR . '/build/index.css', array(), _S_VERSION, 'screen' );
 		}
 	}
 endif;

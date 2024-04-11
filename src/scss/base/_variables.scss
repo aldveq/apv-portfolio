@@ -1,12 +1,12 @@
 $font-1: "Jost",
-	sans-serif;
+sans-serif;
 
-$dark: var(--dark-color);
-$gray: var(--gray-color);
-$soft: rgba(var(--soft-color), 0.18);
-$light: var(--light-color);
-$accent: var(--accent-color);
-$accent-light: rgba(var(--accent-light-color), 0.18);
-$black: var(--black-color);
+$dark        : var(--dark-color);
+$gray        : var(--gray-color);
+$soft        : rgba(var(--soft-rgb-color), 0.18);
+$light       : var(--light-color);
+$accent      : var(--accent-color);
+$accent-light: rgba(var(--accent-light-rgb-color), 0.18);
+$black       : var(--black-color);
 
 $tr: 0.4s cubic-bezier(0, 0, 0.3642, 1);

@@ -1,0 +1,10 @@
+/*Reseting Editor Styles - Start */
+.components-button svg path {
+	fill: currentColor !important;
+}
+
+.wp-block {
+	max-width: initial;
+}
+
+/*Reseting Editor Styles - End */
