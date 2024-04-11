@@ -116,7 +116,16 @@ $apv_socials_data          = carbon_get_theme_option( 'socials_data' );
 			<div class="mil-footer">
 				<p class="mil-upper mil-upper-sm">
 					<?php
-						echo do_shortcode( APVPortfolioUtilities::highlight_text_with_accent_color( $apv_footer_copyright_text ) );
+						echo wp_kses(
+							do_shortcode(
+								APVPortfolioUtilities::highlight_text_with_accent_color( $apv_footer_copyright_text )
+							),
+							array(
+								'span' => array(
+									'class' => array(),
+								),
+							)
+						);
 					?>
 				</p>
 			</div>
