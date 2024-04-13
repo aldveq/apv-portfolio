@@ -1,41 +1,39 @@
 document.addEventListener('DOMContentLoaded', function () {
-	let sections = document.querySelectorAll('.mil-section');
-	let dots = document.querySelectorAll('.mil-dot');
+	const sections = document.querySelectorAll('.mil-section');
+	const dots = document.querySelectorAll('.mil-dot');
 	let index = 0;
 	let scrolling = false;
 
-	function scrollToSection( index ) {
-		if ( index ) {
-			scrolling = true;
-			window.scrollTo({
-				top: index * window.innerHeight,
-				behavior: 'smooth'
-			});
+	function scrollToSection(index) {
+		scrolling = true;
+		window.scrollTo({
+			top: index * window.innerHeight,
+			behavior: "smooth",
+		});
 
-			updateActiveDot(index);
-			updateActiveSection(index);
-		}
+		updateActiveDot(index);
+		updateActiveSection(index);
 	}
 
 	function updateActiveDot(index) {
-		if ( dots ) {
-			dots.forEach(dot => dot.classList.remove('mil-active'));
-			dots[index].classList.add('mil-active');
+		if (dots.length) {
+			dots.forEach((dot) => dot.classList.remove("mil-active"));
+			dots[index].classList.add("mil-active");
 		}
 	}
 
 	function updateActiveSection(index) {
 		sections.forEach((section, sectionIndex) => {
 			if (sectionIndex === index) {
-				section.classList.add('mil-active');
+				section.classList.add("mil-active");
 			} else {
-				section.classList.remove('mil-active');
+				section.classList.remove("mil-active");
 			}
 		});
 	}
 
 	dots.forEach((dot, dotIndex) => {
-		dot.addEventListener('click', function () {
+		dot.addEventListener("click", function () {
 			if (!scrolling) {
 				index = dotIndex;
 				scrollToSection(index);
@@ -68,13 +66,14 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
-	window.addEventListener('wheel', handleWheel, { passive: false });
+	window.addEventListener("wheel", handleWheel, { passive: false });
 
 	// Set the initial scroll position to the top of the document after a short delay
 	setTimeout(function () {
 		window.scrollTo(0, 0);
 
-		if (sections) { // Probably I'll need to remove this if statement once there are section in the DOM
+		if (sections.length) {
+			// Probably I'll need to remove this if statement once there are section in the DOM
 			updateActiveSection(index); // Update active section on page load
 		}
 	}, 100);

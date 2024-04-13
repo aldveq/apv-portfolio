@@ -21,9 +21,13 @@ $apv_hero_body_content     = $args['hero_data']['apv_hero_body_content'];
 $apv_hero_ctas             = $args['hero_data']['apv_hero_ctas'];
 $block_attributes          = $args['block_attributes'];
 $block_classname_attribute = is_array( $block_attributes ) && array_key_exists( 'className', $block_attributes ) ? $block_attributes['className'] : '';
+$block_name                = is_array( $block_attributes ) && array_key_exists( 'metadata', $block_attributes ) ? $block_attributes['metadata']['name'] : '';
 ?>
 
-<div class="mil-section mil-banner mil-banner-right <?php echo esc_attr( $block_classname_attribute ); ?>">
+<div 
+	class="mil-section mil-banner mil-banner-right <?php echo esc_attr( $block_classname_attribute ); ?>"
+	data-name="<?php echo esc_attr( $block_name ); ?>"
+>
 	<div class="container-full">
 		<div class="row no-gutters align-items-center justify-content-between">
 			<div class="col-xl-7">

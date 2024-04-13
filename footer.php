@@ -13,6 +13,10 @@
 
 </div><!-- #page -->
 
+<!-- pagination -->
+<div class="mil-pagination"></div>
+<!-- pagination end -->
+
 <?php wp_footer(); ?>
 
 </body>

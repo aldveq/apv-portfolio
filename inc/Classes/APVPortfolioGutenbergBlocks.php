@@ -44,52 +44,93 @@ if ( ! class_exists( 'APVPortfolioGutenbergBlocks' ) ) :
 		public function apv_register_gutenberg_blocks() {
 			// Hero Slider Block - Start.
 			Block::make( __( 'Hero Slider Block', 'apv-portfolio' ) )
-			->add_fields(
-				array(
-					Field::make( 'image', 'apv_hero_image', __( 'Image', 'apv-portfolio' ) ),
-					Field::make( 'text', 'apv_hero_overline', __( 'Overline', 'apv-portfolio' ) )
-						->help_text( __( 'Wrap text in __* to distinguish it with the global accent color. Example: The wrapped text has a __*different color*__.', 'apv-portfolio' ) ),
-					Field::make( 'text', 'apv_hero_heading', __( 'Heading', 'apv-portfolio' ) ),
-					Field::make( 'rich_text', 'apv_hero_body_content', __( 'Body Content', 'apv-portfolio' ) )
-						->set_settings(
-							array(
-								'media_buttons' => false,
-							)
-						),
-					Field::make( 'complex', 'apv_hero_ctas', __( 'Ctas' ) )
-						->set_layout( 'tabbed-horizontal' )
-						->set_max( 2 )
-						->add_fields(
-							array(
-								Field::make( 'text', 'title', __( 'Title', 'apv-portfolio' ) )
-									->set_width( 25 ),
-								Field::make( 'text', 'url', __( 'URL', 'apv-portfolio' ) )
-									->set_width( 25 ),
-								Field::make( 'checkbox', 'target', __( 'Open in new tab?', 'apv-portfolio' ) )
-									->set_width( 25 ),
-								Field::make( 'checkbox', 'secondary_style', __( 'Secondary style?', 'apv-portfolio' ) )
-									->set_width( 25 ),
-							)
-						),
+				->add_fields(
+					array(
+						Field::make( 'image', 'apv_hero_image', __( 'Image', 'apv-portfolio' ) ),
+						Field::make( 'text', 'apv_hero_overline', __( 'Overline', 'apv-portfolio' ) )
+							->help_text( __( 'Wrap text in __* to distinguish it with the global accent color. Example: The wrapped text has a __*different color*__.', 'apv-portfolio' ) ),
+						Field::make( 'text', 'apv_hero_heading', __( 'Heading', 'apv-portfolio' ) ),
+						Field::make( 'rich_text', 'apv_hero_body_content', __( 'Body Content', 'apv-portfolio' ) )
+							->set_settings(
+								array(
+									'media_buttons' => false,
+								)
+							),
+						Field::make( 'complex', 'apv_hero_ctas', __( 'Ctas' ) )
+							->set_layout( 'tabbed-horizontal' )
+							->set_max( 2 )
+							->add_fields(
+								array(
+									Field::make( 'text', 'title', __( 'Title', 'apv-portfolio' ) )
+										->set_width( 25 ),
+									Field::make( 'text', 'url', __( 'URL', 'apv-portfolio' ) )
+										->set_width( 25 ),
+									Field::make( 'checkbox', 'target', __( 'Open in new tab?', 'apv-portfolio' ) )
+										->set_width( 25 ),
+									Field::make( 'checkbox', 'secondary_style', __( 'Secondary style?', 'apv-portfolio' ) )
+										->set_width( 25 ),
+								)
+							),
+					)
 				)
-			)
-			->set_description( __( 'Hero Slider Block', 'apv-portfolio' ) )
-			->set_category( 'apv-blocks', __( 'APV Blocks', 'apv-portfolio' ) )
-			->set_icon( 'cover-image' )
-			->set_keywords( array( __( 'Hero', 'apv-portfolio' ) ) )
-			->set_render_callback(
-				function ( $fields, $attributes ) {
-					get_template_part(
-						'template-parts/blocks/block',
-						'hero',
-						array(
-							'hero_data'        => $fields,
-							'block_attributes' => $attributes,
-						)
-					);
-				}
-			);
+				->set_description( __( 'Hero Slider Block', 'apv-portfolio' ) )
+				->set_category( 'apv-blocks', __( 'APV Blocks', 'apv-portfolio' ) )
+				->set_icon( 'cover-image' )
+				->set_keywords( array( __( 'Hero', 'apv-portfolio' ) ) )
+				->set_render_callback(
+					function ( $fields, $attributes ) {
+						get_template_part(
+							'template-parts/blocks/block',
+							'hero',
+							array(
+								'hero_data'        => $fields,
+								'block_attributes' => $attributes,
+							)
+						);
+					}
+				);
 			// Hero Slider Block - End.
+			// Image, Content, Cta Block - Start.
+			Block::make( __( 'Image, Content, Cta Block', 'apv-portfolio' ) )
+				->add_fields(
+					array(
+						Field::make( 'image', 'apv_image_content_cta_image', __( 'Image', 'apv-portfolio' ) ),
+						Field::make( 'text', 'apv_image_content_cta_overline', __( 'Overline', 'apv-portfolio' ) )
+							->help_text( __( 'Wrap text in __* to distinguish it with the global accent color. Example: The wrapped text has a __*different color*__.', 'apv-portfolio' ) ),
+						Field::make( 'text', 'apv_image_content_cta_heading', __( 'Heading', 'apv-portfolio' ) ),
+						Field::make( 'rich_text', 'apv_image_content_cta_body_content', __( 'Body Content', 'apv-portfolio' ) )
+							->set_settings(
+								array(
+									'media_buttons' => false,
+								)
+							),
+						Field::make( 'text', 'apv_image_content_cta_title', __( 'Title', 'apv-portfolio' ) )
+							->set_width( 25 ),
+						Field::make( 'text', 'apv_image_content_cta_url', __( 'URL', 'apv-portfolio' ) )
+							->set_width( 25 ),
+						Field::make( 'checkbox', 'apv_image_content_cta_target', __( 'Open in new tab?', 'apv-portfolio' ) )
+							->set_width( 25 ),
+						Field::make( 'checkbox', 'apv_image_content_cta_download_file', __( 'Download file?', 'apv-portfolio' ) )
+							->set_width( 25 ),
+					)
+				)
+				->set_description( __( 'Image, Content, Cta Block', 'apv-portfolio' ) )
+				->set_category( 'apv-blocks', __( 'APV Blocks', 'apv-portfolio' ) )
+				->set_icon( 'align-pull-left' )
+				->set_keywords( array( __( 'Image', 'apv-portfolio' ), __( 'Content', 'apv-portfolio' ), __( 'CTA', 'apv-portfolio' ) ) )
+				->set_render_callback(
+					function ( $fields, $attributes ) {
+						get_template_part(
+							'template-parts/blocks/block',
+							'image-content-cta',
+							array(
+								'data'             => $fields,
+								'block_attributes' => $attributes,
+							)
+						);
+					}
+				);
+			// Image, Content, Cta Block - End.
 		}
 	}
 endif;
