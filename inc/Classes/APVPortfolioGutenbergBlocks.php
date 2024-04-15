@@ -131,6 +131,45 @@ if ( ! class_exists( 'APVPortfolioGutenbergBlocks' ) ) :
 					}
 				);
 			// Image, Content, Cta Block - End.
+			// Skills Block - Start.
+			Block::make( __( 'Skills Block', 'apv-portfolio' ) )
+				->add_fields(
+					array(
+						Field::make( 'text', 'apv_skills_overline', __( 'Overline', 'apv-portfolio' ) )
+							->help_text( __( 'Wrap text in __* to distinguish it with the global accent color. Example: The wrapped text has a __*different color*__.', 'apv-portfolio' ) ),
+						Field::make( 'text', 'apv_skills_heading', __( 'Heading', 'apv-portfolio' ) ),
+						Field::make( 'complex', 'apv_skills_data', __( 'Skills' ) )
+							->set_layout( 'tabbed-horizontal' )
+							->add_fields(
+								array(
+									Field::make( 'icon', 'skill_icon', __( 'Icon', 'apv-portfolio' ) )
+										->set_width( 33 )
+										->add_fontawesome_options(),
+									Field::make( 'text', 'text', __( 'Text', 'apv-portfolio' ) )
+										->set_width( 33 ),
+									Field::make( 'text', 'percentage', __( 'Percentage', 'apv-portfolio' ) )
+										->set_width( 33 ),
+								)
+							),
+					)
+				)
+				->set_description( __( 'Skills Block', 'apv-portfolio' ) )
+				->set_category( 'apv-blocks', __( 'APV Blocks', 'apv-portfolio' ) )
+				->set_icon( 'chart-line' )
+				->set_keywords( array( __( 'Skill', 'apv-portfolio' ), __( 'Ability', 'apv-portfolio' ) ) )
+				->set_render_callback(
+					function ( $fields, $attributes ) {
+						get_template_part(
+							'template-parts/blocks/block',
+							'skills',
+							array(
+								'data'             => $fields,
+								'block_attributes' => $attributes,
+							)
+						);
+					}
+				);
+			// Skills Block - End.
 		}
 	}
 endif;
