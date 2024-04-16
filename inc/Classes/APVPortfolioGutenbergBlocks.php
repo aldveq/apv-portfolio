@@ -170,6 +170,55 @@ if ( ! class_exists( 'APVPortfolioGutenbergBlocks' ) ) :
 					}
 				);
 			// Skills Block - End.
+			// Experience Block - Start.
+			Block::make( __( 'Experience Block', 'apv-portfolio' ) )
+				->add_fields(
+					array(
+						Field::make( 'text', 'apv_experience_overline', __( 'Overline', 'apv-portfolio' ) )
+							->help_text( __( 'Wrap text in __* to distinguish it with the global accent color. Example: The wrapped text has a __*different color*__.', 'apv-portfolio' ) ),
+						Field::make( 'text', 'apv_experience_heading', __( 'Heading', 'apv-portfolio' ) ),
+						Field::make( 'rich_text', 'apv_experience_body_content', __( 'Body Content', 'apv-portfolio' ) )
+							->set_settings(
+								array(
+									'media_buttons' => false,
+								)
+							),
+						Field::make( 'complex', 'apv_experience_data', __( 'Skills' ) )
+							->set_layout( 'tabbed-horizontal' )
+							->add_fields(
+								array(
+									Field::make( 'text', 'agency', __( 'Agency/Company', 'apv-portfolio' ) )
+										->set_width( 33 ),
+									Field::make( 'text', 'period', __( 'Period', 'apv-portfolio' ) )
+										->set_width( 33 ),
+									Field::make( 'rich_text', 'job_description', __( 'Job Description', 'apv-portfolio' ) )
+										->set_width( 33 )
+										->set_settings(
+											array(
+												'media_buttons' => false,
+											)
+										),
+								)
+							),
+					)
+				)
+				->set_description( __( 'Experience Block', 'apv-portfolio' ) )
+				->set_category( 'apv-blocks', __( 'APV Blocks', 'apv-portfolio' ) )
+				->set_icon( 'businessman' )
+				->set_keywords( array( __( 'Experience', 'apv-portfolio' ), __( 'Jobs', 'apv-portfolio' ) ) )
+				->set_render_callback(
+					function ( $fields, $attributes ) {
+						get_template_part(
+							'template-parts/blocks/block',
+							'experience',
+							array(
+								'data'             => $fields,
+								'block_attributes' => $attributes,
+							)
+						);
+					}
+				);
+			// Experience Block - End.
 		}
 	}
 endif;
