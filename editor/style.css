@@ -7,4 +7,20 @@
 	max-width: initial;
 }
 
+/* Blocks styles - Start */
+
+/* Exprience Block - Start */
+.section-experience .swiper-wrapper {
+	display  : flex;
+	flex-wrap: wrap;
+}
+
+.section-experience .swiper-wrapper .swiper-slide {
+	width: 22%;
+}
+
+/* Exprience Block - End */
+
+/* Blocks styles - End */
+
 /*Reseting Editor Styles - End */
