@@ -219,6 +219,58 @@ if ( ! class_exists( 'APVPortfolioGutenbergBlocks' ) ) :
 					}
 				);
 			// Experience Block - End.
+			// Education Block - Start.
+			Block::make( __( 'Education Block', 'apv-portfolio' ) )
+				->add_fields(
+					array(
+						Field::make( 'text', 'apv_education_overline', __( 'Overline', 'apv-portfolio' ) )
+							->help_text( __( 'Wrap text in __* to distinguish it with the global accent color. Example: The wrapped text has a __*different color*__.', 'apv-portfolio' ) ),
+						Field::make( 'text', 'apv_education_heading', __( 'Heading', 'apv-portfolio' ) ),
+						Field::make( 'rich_text', 'apv_education_body_content', __( 'Body Content', 'apv-portfolio' ) )
+							->set_settings(
+								array(
+									'media_buttons' => false,
+								)
+							),
+						Field::make( 'complex', 'apv_education_data', __( 'Education' ) )
+							->set_layout( 'tabbed-horizontal' )
+							->add_fields(
+								array(
+									Field::make( 'text', 'link', __( 'Link', 'apv-portfolio' ) )
+										->set_width( 50 ),
+									Field::make( 'text', 'title', __( 'Title', 'apv-portfolio' ) )
+										->set_width( 50 ),
+									Field::make( 'text', 'period', __( 'Period', 'apv-portfolio' ) )
+										->set_width( 50 )
+										->help_text( __( 'Wrap text in __* to distinguish it with the global accent color. Example: The wrapped text has a __*different color*__.', 'apv-portfolio' ) ),
+									Field::make( 'rich_text', 'description', __( 'Description', 'apv-portfolio' ) )
+										->set_width( 50 )
+										->set_settings(
+											array(
+												'media_buttons' => false,
+											)
+										),
+								)
+							),
+					)
+				)
+				->set_description( __( 'Education Block', 'apv-portfolio' ) )
+				->set_category( 'apv-blocks', __( 'APV Blocks', 'apv-portfolio' ) )
+				->set_icon( 'awards' )
+				->set_keywords( array( __( 'Education', 'apv-portfolio' ), __( 'Titles', 'apv-portfolio' ) ) )
+				->set_render_callback(
+					function ( $fields, $attributes ) {
+						get_template_part(
+							'template-parts/blocks/block',
+							'education',
+							array(
+								'data'             => $fields,
+								'block_attributes' => $attributes,
+							)
+						);
+					}
+				);
+			// Education Block - End.
 		}
 	}
 endif;
