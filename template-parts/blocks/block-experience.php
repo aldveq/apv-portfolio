@@ -22,7 +22,7 @@ $block_attributes            = $args['block_attributes'];
 $block_classname_attribute   = is_array( $block_attributes ) && array_key_exists( 'className', $block_attributes ) ? $block_attributes['className'] : '';
 $block_name                  = is_array( $block_attributes ) && array_key_exists( 'metadata', $block_attributes ) ? $block_attributes['metadata']['name'] : '';
 ?>
-<div 
+<section 
 	class="mil-section mil-op-space-90 section-experience <?php echo esc_attr( $block_classname_attribute ); ?>"
 	data-name="<?php echo esc_attr( $block_name ); ?>"
 >
@@ -126,4 +126,4 @@ $block_name                  = is_array( $block_attributes ) && array_key_exists
 			</div>
 		</div>
 	</div>
-</div>
+</section>
