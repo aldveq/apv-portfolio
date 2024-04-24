@@ -155,5 +155,18 @@ if ( ! class_exists( 'APVPortfolioUtilities' ) ) :
 				$text
 			);
 		}
+
+		/**
+		 * Formatted Paragraphs
+		 *
+		 * @param string $content Paragraphs content.
+		 * @param string $classnames CSS classnames.
+		 * @return string
+		 */
+		public static function get_formatted_paragraphs( $content, $classnames ) {
+			$formatted_content            = wpautop( $content );
+			$formatted_content_with_class = str_replace( '<p>', '<p class="' . $classnames . '">', $formatted_content );
+			return $formatted_content_with_class;
+		}
 	}
 endif;

@@ -271,6 +271,54 @@ if ( ! class_exists( 'APVPortfolioGutenbergBlocks' ) ) :
 					}
 				);
 			// Education Block - End.
+			// Contact Block - Start.
+			Block::make( __( 'Contact Block', 'apv-portfolio' ) )
+				->add_fields(
+					array(
+						Field::make( 'text', 'apv_contact_overline', __( 'Overline', 'apv-portfolio' ) )
+							->help_text( __( 'Wrap text in __* to distinguish it with the global accent color. Example: The wrapped text has a __*different color*__.', 'apv-portfolio' ) ),
+						Field::make( 'text', 'apv_contact_heading', __( 'Heading', 'apv-portfolio' ) ),
+						Field::make( 'rich_text', 'apv_contact_body_content', __( 'Body Content', 'apv-portfolio' ) )
+							->set_settings(
+								array(
+									'media_buttons' => false,
+								)
+							),
+						Field::make( 'complex', 'apv_contact_info', __( 'Contact Info', 'apv-portfolio' ) )
+							->set_layout( 'tabbed-horizontal' )
+							->set_max( 3 )
+							->add_fields(
+								array(
+									Field::make( 'select', 'contact_info', __( 'Choose Contact Info', 'apv-portfolio' ) )
+										->add_options(
+											array(
+												'phones'  => __( 'Phones', 'apv-portfolio' ),
+												'address' => __( 'Address', 'apv-portfolio' ),
+												'emails'  => __( 'Emails', 'apv-portfolio' ),
+											)
+										),
+								)
+							),
+						Field::make( 'text', 'apv_contact_form_shortcode', __( 'Contact Form Shortcode', 'apv-portfolio' ) ),
+					)
+				)
+				->set_description( __( 'Contact Block', 'apv-portfolio' ) )
+				->set_category( 'apv-blocks', __( 'APV Blocks', 'apv-portfolio' ) )
+				->set_icon( 'forms' )
+				->set_keywords( array( __( 'Contact Form', 'apv-portfolio' ), __( 'Contact Info', 'apv-portfolio' ) ) )
+				->set_render_callback(
+					function ( $fields, $attributes ) {
+						get_template_part(
+							'template-parts/blocks/block',
+							'contact-form-info',
+							array(
+								'data'             => $fields,
+								'block_attributes' => $attributes,
+							)
+						);
+					}
+				);
+			// Contact Block - End.
 		}
 	}
 endif;
