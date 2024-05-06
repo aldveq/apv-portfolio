@@ -14,13 +14,7 @@ get_header( 'secondary' );
 
 		<div class="mil-bg-item" style="top: 3%; right: 15%; transform: rotate(-45deg)"></div>
 
-		<div class="container">
-			<div class="mil-top-banner">
-				<p class="mil-upper mil-mb-30">Featured <span class="mil-accent">projects</span></p>
-				<h2 class="mil-up mil-mb-30">Portfolio</h2>
-				<p class="mil-left-offset">A Collection of my favorites project I’ve designed recently. <br>Feeling great while sharing here.</p>
-			</div>
-		</div>
+		<?php get_template_part( 'template-parts/archive-projects/intro-content' ); ?>
 
 		<?php
 			$projects_taxonomy_data = get_terms(

@@ -141,6 +141,20 @@ if ( ! class_exists( 'APVPortfolioThemeOptions' ) ) :
 					)
 				)
 				->add_tab(
+					__( 'Project Archive', 'apv-portfolio' ),
+					array(
+						Field::make( 'text', 'apv_project_archive_overline', __( 'Overline', 'apv-portfolio' ) )
+							->help_text( __( 'Wrap text in __* to distinguish it with the global accent color. Example: The wrapped text has a __*different color*__.', 'apv-portfolio' ) ),
+						Field::make( 'text', 'apv_project_archive_heading', __( 'Heading', 'apv-portfolio' ) ),
+						Field::make( 'rich_text', 'apv_project_archive_content', __( 'Body Content', 'apv-portfolio' ) )
+							->set_settings(
+								array(
+									'media_buttons' => false,
+								)
+							),
+					)
+				)
+				->add_tab(
 					__( 'Footer', 'apv-portfolio' ),
 					array(
 						Field::make( 'text', 'apv_footer_copyright_text', __( 'Footer Copyright', 'apv-portfolio' ) )
