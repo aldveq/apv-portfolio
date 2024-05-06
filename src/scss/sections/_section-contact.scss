@@ -1,4 +1,5 @@
 .section-contact {
+
 	form {
 
 		input,
@@ -6,8 +7,8 @@
 			margin-top: 15px;
 		}
 
-		input+span.wpcf7-not-valid-tip,
-		textarea+span.wpcf7-not-valid-tip {
+		input + span.wpcf7-not-valid-tip,
+		textarea + span.wpcf7-not-valid-tip {
 			text-transform: capitalize;
 		}
 	}

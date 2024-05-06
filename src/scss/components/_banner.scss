@@ -5,11 +5,11 @@ banner
 ------------------------------------------- */
 
 .mil-top-banner {
-	padding-top   : 200px;
+	padding-top: 200px;
 	padding-bottom: 100px;
 
 	@media screen and (max-width: 1200px) {
-		padding-top   : 170px;
+		padding-top: 170px;
 		padding-bottom: 60px;
 
 		p br {
@@ -23,18 +23,18 @@ banner
 	overflow: hidden;
 
 	@media screen and (max-width: 1200px) {
-		padding-top  : 90px;
+		padding-top: 90px;
 		margin-bottom: 60px;
 	}
 
 	.mil-banner-image {
-		width             : 100%;
-		height            : 100vh;
-		-o-object-fit     : cover;
-		object-fit        : cover;
+		width: 100%;
+		height: 100vh;
+		-o-object-fit: cover;
+		object-fit: cover;
 		-o-object-position: center;
-		object-position   : center;
-		vertical-align    : top;
+		object-position: center;
+		vertical-align: top;
 
 		@media screen and (max-width: 1200px) {
 			height: 60vh;
@@ -42,12 +42,12 @@ banner
 	}
 
 	.mil-banner-text {
-		position  : relative;
+		position: relative;
 		text-align: left;
-		padding   : 0 20% 0 10%;
+		padding: 0 20% 0 10%;
 
 		@media screen and (max-width: 1200px) {
-			padding   : 60px 30px;
+			padding: 60px 30px;
 			text-align: center;
 		}
 	}
@@ -67,12 +67,12 @@ banner
 	&.mil-banner-right {
 
 		.mil-banner-text {
-			position  : relative;
+			position: relative;
 			text-align: left;
-			padding   : 0 10% 0 20%;
+			padding: 0 10% 0 20%;
 
 			@media screen and (max-width: 1200px) {
-				padding   : 60px 30px;
+				padding: 60px 30px;
 				text-align: center;
 			}
 		}

@@ -59,14 +59,25 @@ if ( ! class_exists( 'APVPortfolioUtilities' ) ) :
 			$formatted_nav_items = array();
 			$navigation_id       = self::get_menu_id_by_location( $menu_location );
 			$navigation_items    = wp_get_nav_menu_items( $navigation_id );
+			$nav_item_active     = false;
 
 			foreach ( $navigation_items as $nav_item ) :
+
+				switch ( $nav_item->object ) :
+					case 'page':
+						$nav_item_active = sanitize_title( $nav_item->title ) === $global_slug ? true : false;
+						break;
+					default:
+						$nav_item_active = is_archive( 'projects' ) || is_singular( 'projects' ) ? true : false;
+						break;
+				endswitch;
+
 				array_push(
 					$formatted_nav_items,
 					array(
 						'title'     => $nav_item->title,
 						'url'       => $nav_item->url,
-						'is_active' => sanitize_title( $nav_item->title ) === $global_slug ? true : false,
+						'is_active' => $nav_item_active,
 					)
 				);
 			endforeach;

@@ -35,6 +35,7 @@ if ( ! class_exists( 'APVPortfolioInit' ) ) :
 			// Loading Classes.
 			APVPortfolioCBFSetup::get_instance();
 			APVPortfolioThemeOptions::get_instance();
+			APVPortfolioCPTS::get_instance();
 			APVPortfolioGutenbergBlocks::get_instance();
 			APVPortfolioUtilities::get_instance();
 
@@ -186,6 +187,7 @@ if ( ! class_exists( 'APVPortfolioInit' ) ) :
 			add_image_size( 'brand-size', 100, 22, false );
 			add_image_size( 'hero-image-size', 835, 1080, true );
 			add_image_size( 'image-content-cta-size', 835, 1080, true );
+			add_image_size( 'project-featured-image', 1000, 900, false );
 		}
 
 		/**
@@ -232,13 +234,20 @@ if ( ! class_exists( 'APVPortfolioInit' ) ) :
 			wp_enqueue_style( 'apv-portfolio-main-sytle', APV_PORTFOLIO_THEME_DIR . '/build/index.css', array(), _S_VERSION, 'screen' );
 
 			// JS Scripts.
-			wp_enqueue_script( 'apv-portfolio-jquery-validate', APV_PORTFOLIO_THEME_DIR . '/assets/js/jquery.validate.min.js', array( 'jquery' ), _S_VERSION, true );
-			wp_enqueue_script( 'apv-portfolio-magnific-popup', APV_PORTFOLIO_THEME_DIR . '/assets/js/magnific-popup.js', array( 'jquery' ), _S_VERSION, true );
-			wp_enqueue_script( 'apv-portfolio-sections-pagination', APV_PORTFOLIO_THEME_DIR . '/assets/js/sections-pagination.js', array(), _S_VERSION, true );
-			wp_enqueue_script( 'apv-portfolio-one-page', APV_PORTFOLIO_THEME_DIR . '/assets/js/onepage.js', array( 'apv-portfolio-sections-pagination' ), _S_VERSION, true );
-			wp_enqueue_script( 'apv-portfolio-swiper', APV_PORTFOLIO_THEME_DIR . '/assets/js/swiper.min.js', array(), _S_VERSION, true );
-			wp_enqueue_script( 'apv-portfolio-isotope', APV_PORTFOLIO_THEME_DIR . '/assets/js/isotope.min.js', array(), _S_VERSION, true );
-			wp_enqueue_script( 'apv-portfolio-main', APV_PORTFOLIO_THEME_DIR . '/build/index.js', array( 'jquery' ), _S_VERSION, true );
+			if ( is_archive( 'projects' ) ) :
+				wp_enqueue_script( 'apv-portfolio-magnific-popup', APV_PORTFOLIO_THEME_DIR . '/assets/js/magnific-popup.js', array( 'jquery' ), _S_VERSION, true );
+				wp_enqueue_script( 'apv-portfolio-swiper', APV_PORTFOLIO_THEME_DIR . '/assets/js/swiper.min.js', array(), _S_VERSION, true );
+				wp_enqueue_script( 'apv-portfolio-isotope', APV_PORTFOLIO_THEME_DIR . '/assets/js/isotope.min.js', array(), _S_VERSION, true );
+				wp_enqueue_script( 'apv-portfolio-main', APV_PORTFOLIO_THEME_DIR . '/build/index.js', array( 'jquery' ), _S_VERSION, true );
+			else :
+				wp_enqueue_script( 'apv-portfolio-jquery-validate', APV_PORTFOLIO_THEME_DIR . '/assets/js/jquery.validate.min.js', array( 'jquery' ), _S_VERSION, true );
+				wp_enqueue_script( 'apv-portfolio-magnific-popup', APV_PORTFOLIO_THEME_DIR . '/assets/js/magnific-popup.js', array( 'jquery' ), _S_VERSION, true );
+				wp_enqueue_script( 'apv-portfolio-sections-pagination', APV_PORTFOLIO_THEME_DIR . '/assets/js/sections-pagination.js', array(), _S_VERSION, true );
+				wp_enqueue_script( 'apv-portfolio-one-page', APV_PORTFOLIO_THEME_DIR . '/assets/js/onepage.js', array( 'apv-portfolio-sections-pagination' ), _S_VERSION, true );
+				wp_enqueue_script( 'apv-portfolio-swiper', APV_PORTFOLIO_THEME_DIR . '/assets/js/swiper.min.js', array(), _S_VERSION, true );
+				wp_enqueue_script( 'apv-portfolio-isotope', APV_PORTFOLIO_THEME_DIR . '/assets/js/isotope.min.js', array(), _S_VERSION, true );
+				wp_enqueue_script( 'apv-portfolio-main', APV_PORTFOLIO_THEME_DIR . '/build/index.js', array( 'jquery' ), _S_VERSION, true );
+			endif;
 		}
 
 		/**
