@@ -33,7 +33,7 @@ if ( is_array( $projects_taxonomy_data ) && count( $projects_taxonomy_data ) > 0
 						<li>
 							<a 
 								href="<?php echo esc_url( get_category_link( $project_tax_data->term_id ) ); ?>" 
-								class="<?php echo get_queried_object()->slug === $project_tax_data->slug ? esc_attr( 'mil-current' ) : ''; ?>"
+								class="<?php echo isset( get_queried_object()->slug ) && get_queried_object()->slug === $project_tax_data->slug ? esc_attr( 'mil-current' ) : ''; ?>"
 							>
 								<?php echo esc_html( $project_tax_data->name ); ?>
 							</a>
