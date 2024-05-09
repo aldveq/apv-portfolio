@@ -186,7 +186,7 @@ if ( ! class_exists( 'APVPortfolioInit' ) ) :
 			 */
 			add_image_size( 'brand-size', 100, 22, false );
 			add_image_size( 'hero-image-size', 835, 1080, true );
-			add_image_size( 'image-content-cta-size', 835, 1080, true );
+			add_image_size( 'image-content-cta-size', 400, 510, true );
 			add_image_size( 'project-featured-image', 1000, 900, false );
 		}
 
