@@ -11,7 +11,7 @@ $project_term_by_post = get_the_terms( get_the_ID(), 'projects-category' );
 ?>
 	<div class="mil-grid-item">
 
-		<a href="<?php echo esc_url( the_permalink() ); ?>" class="mil-portfolio-item mil-square-item mil-mb-60" target="_self">
+		<a href="<?php echo esc_url( get_the_permalink( get_the_ID() ) ); ?>" class="mil-portfolio-item mil-square-item mil-mb-60" target="_self">
 			<div class="mil-cover">
 				<?php
 					echo wp_get_attachment_image(
