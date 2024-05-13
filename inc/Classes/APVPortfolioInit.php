@@ -234,7 +234,7 @@ if ( ! class_exists( 'APVPortfolioInit' ) ) :
 			wp_enqueue_style( 'apv-portfolio-main-sytle', APV_PORTFOLIO_THEME_DIR . '/build/index.css', array(), _S_VERSION, 'screen' );
 
 			// JS Scripts.
-			if ( is_archive( 'projects' ) ) :
+			if ( is_archive( 'projects' ) || is_home() ) :
 				wp_enqueue_script( 'apv-portfolio-magnific-popup', APV_PORTFOLIO_THEME_DIR . '/assets/js/magnific-popup.js', array( 'jquery' ), _S_VERSION, true );
 				wp_enqueue_script( 'apv-portfolio-swiper', APV_PORTFOLIO_THEME_DIR . '/assets/js/swiper.min.js', array(), _S_VERSION, true );
 				wp_enqueue_script( 'apv-portfolio-isotope', APV_PORTFOLIO_THEME_DIR . '/assets/js/isotope.min.js', array(), _S_VERSION, true );

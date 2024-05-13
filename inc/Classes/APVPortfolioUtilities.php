@@ -54,23 +54,37 @@ if ( ! class_exists( 'APVPortfolioUtilities' ) ) :
 		 * @return array Menu Items by Location
 		 */
 		public static function get_menu_items_by_location( $menu_location ) {
-			global $post;
-			$global_slug         = $post->post_name;
 			$formatted_nav_items = array();
 			$navigation_id       = self::get_menu_id_by_location( $menu_location );
 			$navigation_items    = wp_get_nav_menu_items( $navigation_id );
 			$nav_item_active     = false;
+			$nav_current_item    = '';
+
+			if ( is_page() ) : // All pages.
+				global $post;
+				$nav_current_item = sanitize_title( $post->post_name );
+			endif;
+
+			if ( is_archive( 'projects' ) ) : // Projects Archive.
+				$nav_current_item = sanitize_title( get_queried_object()->name );
+			endif;
+
+			if ( is_tax( 'projects-category' ) ) : // Current Project Taxonomy.
+				$post_id   = get_the_ID(); // Get current post ID.
+				$post_type = get_post_type( $post_id ); // Get the post type of the current post.
+
+				if ( ! empty( $post_type ) ) :
+					$nav_current_item = $post_type;
+				endif;
+
+			endif;
+
+			if ( is_home() ) : // Blog posts page.
+				$nav_current_item = sanitize_title( get_queried_object()->post_name );
+			endif;
 
 			foreach ( $navigation_items as $nav_item ) :
-
-				switch ( $nav_item->object ) :
-					case 'page':
-						$nav_item_active = sanitize_title( $nav_item->title ) === $global_slug ? true : false;
-						break;
-					default:
-						$nav_item_active = is_archive( 'projects' ) || is_singular( 'projects' ) ? true : false;
-						break;
-				endswitch;
+				$nav_item_active = sanitize_title( $nav_item->title ) === $nav_current_item ? true : false;
 
 				array_push(
 					$formatted_nav_items,
