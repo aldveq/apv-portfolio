@@ -39,7 +39,7 @@ $apv_socials_data = carbon_get_theme_option( 'socials_data' );
 
 				if ( ! empty( $header_brand_logo_id ) ) :
 					?>
-					<a href="index.html" class="mil-logo">
+					<a href="<?php echo esc_url( home_url() ); ?>" class="mil-logo">
 						<?php
 							echo wp_get_attachment_image(
 								$header_brand_logo_id,
