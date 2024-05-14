@@ -16,6 +16,7 @@ blog
 		&::after {
 			content: "";
 			position: absolute;
+			z-index: -1;
 			left: 12px;
 			top: 12px;
 			right: -12px;
@@ -51,6 +52,11 @@ blog
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+
+		.mil-accent a {
+			color: $accent;
+			text-decoration: none;
+		}
 	}
 
 	.mil-card-text {

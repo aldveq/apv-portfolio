@@ -193,5 +193,22 @@ if ( ! class_exists( 'APVPortfolioUtilities' ) ) :
 			$formatted_content_with_class = str_replace( '<p>', '<p class="' . $classnames . '">', $formatted_content );
 			return $formatted_content_with_class;
 		}
+
+		/**
+		 * Getting Taxonomies Data
+		 *
+		 * @param array $taxonomy_array Taxonomy array.
+		 * @return string $formatted_tax_array Formatted taxonomies.
+		 */
+		public static function get_taxonomies_data( $taxonomy_array ) {
+			$formatted_tax_array = array();
+
+			foreach ( $taxonomy_array as $tax_data ) {
+				$formatted_tax_array[] = '<a href="' . esc_url( get_term_link( $tax_data->term_id ) ) . '" target="_self">' . esc_html( $tax_data->name ) . '</a>';
+			}
+
+			$formatted_tax_array = implode( ', ', $formatted_tax_array );
+			return $formatted_tax_array;
+		}
 	}
 endif;
