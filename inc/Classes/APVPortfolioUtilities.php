@@ -83,6 +83,10 @@ if ( ! class_exists( 'APVPortfolioUtilities' ) ) :
 				$nav_current_item = sanitize_title( get_queried_object()->post_name );
 			endif;
 
+			if ( is_category() ) :
+				$nav_current_item = 'blog';
+			endif;
+
 			foreach ( $navigation_items as $nav_item ) :
 				$nav_item_active = sanitize_title( $nav_item->title ) === $nav_current_item ? true : false;
 
