@@ -25,7 +25,7 @@ $project_term_by_post = get_the_terms( get_the_ID(), 'projects-category' );
 							false,
 							array( 'load' => 'lazy' )
 						);
-					?>
+						?>
 					<div class="mil-hover-link">
 						<i class="fas fa-link"></i>
 					</div>

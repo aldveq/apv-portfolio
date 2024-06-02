@@ -69,6 +69,11 @@ if ( ! class_exists( 'APVPortfolioUtilities' ) ) :
 				$nav_current_item = sanitize_title( get_queried_object()->name );
 			endif;
 
+			if ( is_singular( 'projects' ) ) :
+				global $post;
+				$nav_current_item = sanitize_title( $post->post_type );
+			endif;
+
 			if ( is_tax( 'projects-category' ) ) : // Current Project Taxonomy.
 				$post_id   = get_the_ID(); // Get current post ID.
 				$post_type = get_post_type( $post_id ); // Get the post type of the current post.
