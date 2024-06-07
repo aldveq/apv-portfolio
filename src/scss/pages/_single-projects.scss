@@ -36,7 +36,9 @@
 		}
 
 		img {
-			max-width: 315px;
+			max-width      : 315px;
+			object-fit     : cover;
+			object-position: center;
 		}
 	}
 
