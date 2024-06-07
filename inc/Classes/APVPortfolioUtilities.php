@@ -210,6 +210,10 @@ if ( ! class_exists( 'APVPortfolioUtilities' ) ) :
 		 * @return string $formatted_tax_array Formatted taxonomies.
 		 */
 		public static function get_taxonomies_data( $taxonomy_array ) {
+			if ( ! is_array( $taxonomy_array ) && count( $taxonomy_array ) === 0 ) :
+				return;
+			endif;
+
 			$formatted_tax_array = array();
 
 			foreach ( $taxonomy_array as $tax_data ) {

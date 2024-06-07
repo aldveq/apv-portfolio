@@ -142,8 +142,12 @@ portfolio
 		}
 
 		p {
+			line-height: 1.4;
+			color      : $dark;
+
 			a {
-				color: $accent;
+				color    : $accent;
+				font-size: 14px;
 			}
 		}
 

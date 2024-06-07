@@ -7,6 +7,8 @@
  * @package APV_Portfolio
  */
 
+use APVPortfolio\Classes\APVPortfolioUtilities;
+
 $project_term_by_post = get_the_terms( get_the_ID(), 'projects-category' );
 ?>
 	<div class="mil-grid-item">
@@ -33,12 +35,13 @@ $project_term_by_post = get_the_terms( get_the_ID(), 'projects-category' );
 			</div>
 			<div class="mil-project-descr">
 				<p class="mil-upper mil-accent mil-mb-15">
-					<a 
-						href="<?php echo esc_url( get_term_link( $project_term_by_post[0]->term_id ) ); ?>"
-						target="_self"
-					>
-						<?php echo esc_html( $project_term_by_post[0]->name ); ?>
-					</a>
+					<?php
+						$project_term_by_post_formatted_string = APVPortfolioUtilities::get_taxonomies_data( $project_term_by_post );
+
+					if ( ! empty( $project_term_by_post_formatted_string ) ) :
+						echo wp_kses_post( $project_term_by_post_formatted_string );
+						endif;
+					?>
 				</p>
 				<h4 class="mil-up">
 					<a 
