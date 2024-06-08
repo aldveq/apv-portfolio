@@ -84,12 +84,10 @@ if ( ! class_exists( 'APVPortfolioUtilities' ) ) :
 
 			endif;
 
-			if ( is_home() ) : // Blog posts page.
-				$nav_current_item = sanitize_title( get_queried_object()->post_name );
-			endif;
-
-			if ( is_category() || ( is_single() && ! is_singular( 'projects' ) ) ) :
-				$nav_current_item = 'blog';
+			if ( is_home() || is_category() || ( is_single() && ! is_singular( 'projects' ) ) ) :
+				$page_for_posts_id = get_option( 'page_for_posts' );
+				$blog_page_data    = get_post( $page_for_posts_id );
+				$nav_current_item  = $blog_page_data->post_name;
 			endif;
 
 			foreach ( $navigation_items as $nav_item ) :
