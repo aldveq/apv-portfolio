@@ -293,11 +293,61 @@ blog
 }
 
 .mil-publication {
-	padding-top   : 185px;
-	padding-bottom: 90px;
+	padding-top: 185px;
 
 	@media screen and (max-width: 1200px) {
-		padding-top: 170px;
+		padding-top: 120px;
+	}
+
+	&__tax-data {
+		a {
+			color          : $accent;
+			font-size      : 14px;
+			text-decoration: none;
+		}
+	}
+
+	&__content-wrapper {
+		p {
+			margin-bottom: 30px;
+
+			a {
+				color: $accent;
+			}
+		}
+	}
+
+	&__pagination-panel {
+		padding: 90px 0 0;
+
+		@media screen and (max-width: 1200px) {
+			padding: 90px 0 20px;
+		}
+
+		.navigation {
+			width: 100%;
+
+			.nav-links {
+				width          : 100%;
+				justify-content: space-between;
+
+				.nav-previous {
+					margin-right: auto;
+
+					@media screen and (max-width: 490px) {
+						margin-left: auto;
+					}
+				}
+
+				.nav-next {
+					margin-left: auto;
+
+					@media screen and (max-width: 490px) {
+						margin-right: auto;
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -312,6 +362,7 @@ blog
 		top           : 12px;
 		right         : -12px;
 		bottom        : -12px;
+		z-index       : -1;
 		border        : 2px solid $dark;
 		pointer-events: none;
 		transform     : scale(1);

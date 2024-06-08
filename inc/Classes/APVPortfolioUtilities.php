@@ -88,7 +88,7 @@ if ( ! class_exists( 'APVPortfolioUtilities' ) ) :
 				$nav_current_item = sanitize_title( get_queried_object()->post_name );
 			endif;
 
-			if ( is_category() ) :
+			if ( is_category() || ( is_single() && ! is_singular( 'projects' ) ) ) :
 				$nav_current_item = 'blog';
 			endif;
 
