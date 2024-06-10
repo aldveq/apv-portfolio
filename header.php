@@ -12,6 +12,7 @@
 // Variables & Classes Imports.
 use APVPortfolio\Classes\APVPortfolioUtilities;
 
+$apv_header_brand_text     = carbon_get_theme_option( 'apv_header_brand_text' );
 $apv_footer_copyright_text = carbon_get_theme_option( 'apv_footer_copyright_text' );
 $apv_socials_data          = carbon_get_theme_option( 'socials_data' );
 ?>
@@ -37,22 +38,13 @@ $apv_socials_data          = carbon_get_theme_option( 'socials_data' );
 		<header class="mil-top-panel mil-tp-2">
 			<div class="mil-tp-frame">
 				<?php
-					$header_brand_logo_id = get_theme_mod( 'custom_logo' );
-
-				if ( ! empty( $header_brand_logo_id ) ) :
+				if ( ! empty( $apv_header_brand_text ) ) :
 					?>
 					<a href="<?php echo esc_url( home_url() ); ?>" class="mil-logo">
-					<?php
-						echo wp_get_attachment_image(
-							$header_brand_logo_id,
-							'brand-size',
-							false,
-							null
-						);
-					?>
+						<span><?php echo esc_html( $apv_header_brand_text ); ?></span>
 					</a>
 					<?php
-					endif;
+				endif;
 				?>
 
 				<?php

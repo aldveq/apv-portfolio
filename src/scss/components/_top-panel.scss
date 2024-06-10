@@ -4,12 +4,12 @@ top panel
 
 ------------------------------------------- */
 .mil-top-panel {
-	pointer-events: all;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: 80px;
-	transition: $tr;
+	pointer-events  : all;
+	display         : flex;
+	align-items     : center;
+	justify-content : space-between;
+	height          : 80px;
+	transition      : $tr;
 	transition-delay: 0s;
 
 	&.mil-tp-inner {
@@ -17,18 +17,18 @@ top panel
 
 		&::before,
 		&::after {
-			content: "";
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: -20px;
-			height: 20px;
+			content   : "";
+			position  : absolute;
+			left      : 0;
+			right     : 0;
+			top       : -20px;
+			height    : 20px;
 			background: $light;
-			z-index: -1;
+			z-index   : -1;
 		}
 
 		&::after {
-			top: auto;
+			top   : auto;
 			bottom: -20px;
 		}
 	}
@@ -38,20 +38,26 @@ top panel
 	}
 
 	.mil-tp-frame {
-		width: 100%;
-		display: flex;
+		width          : 100%;
+		display        : flex;
 		justify-content: space-between;
 	}
 
 	.mil-logo {
-		position: relative;
-		margin-top: 2px;
-		padding: 0 40px;
-		width: 180px;
-		height: 80px;
-		display: block;
-		display: flex;
-		align-items: center;
+		position       : relative;
+		margin-top     : 2px;
+		width          : 180px;
+		height         : 80px;
+		display        : flex;
+		justify-content: center;
+		align-items    : center;
+		text-transform : uppercase;
+		line-height    : 100%;
+		text-shadow    : 5px 5px 0 $soft;
+		color          : $dark;
+		font-weight    : bold;
+		text-decoration: none;
+		font-size      : 32px;
 
 		img {
 			width: 100%;
@@ -59,16 +65,16 @@ top panel
 	}
 
 	nav {
-		position: relative;
+		position     : relative;
 		border-bottom: solid 2px $black;
-		padding: 0 40px 0 30px;
+		padding      : 0 40px 0 30px;
 
 		&::after {
-			content: "";
-			position: absolute;
-			left: 7px;
-			bottom: -9px;
-			right: -5px;
+			content      : "";
+			position     : absolute;
+			left         : 7px;
+			bottom       : -9px;
+			right        : -5px;
 			border-bottom: 2px solid $soft;
 		}
 
@@ -76,12 +82,12 @@ top panel
 			display: flex;
 
 			li {
-				position: relative;
-				height: 80px;
+				position       : relative;
+				height         : 80px;
 				list-style-type: none;
-				margin-right: 40px;
-				display: flex;
-				align-items: center;
+				margin-right   : 40px;
+				display        : flex;
+				align-items    : center;
 
 				&:last-child {
 					margin-right: 0;
@@ -89,12 +95,12 @@ top panel
 
 				a {
 					text-decoration: none;
-					color: inherit;
-					font-size: 14px;
-					font-weight: 700;
-					text-transform: uppercase;
-					white-space: nowrap;
-					transition: $tr;
+					color          : inherit;
+					font-size      : 14px;
+					font-weight    : 700;
+					text-transform : uppercase;
+					white-space    : nowrap;
+					transition     : $tr;
 
 					&:hover {
 						color: $accent;
@@ -108,34 +114,34 @@ top panel
 					}
 
 					&::after {
-						content: "";
-						display: block;
-						position: absolute;
-						bottom: 0;
-						left: calc(50% - 1px);
-						width: 2px;
-						height: 10px;
+						content         : "";
+						display         : block;
+						position        : absolute;
+						bottom          : 0;
+						left            : calc(50% - 1px);
+						width           : 2px;
+						height          : 10px;
 						background-color: $black;
 					}
 				}
 
 				ul {
-					pointer-events: none;
-					transform: scale(0.9) translateY(-5px);
-					opacity: 0;
-					position: absolute;
-					top: 80px;
-					left: -32px;
-					padding: 30px;
-					display: flex;
-					flex-direction: column;
-					border: solid 2px $soft;
+					pointer-events  : none;
+					transform       : scale(0.9) translateY(-5px);
+					opacity         : 0;
+					position        : absolute;
+					top             : 80px;
+					left            : -32px;
+					padding         : 30px;
+					display         : flex;
+					flex-direction  : column;
+					border          : solid 2px $soft;
 					background-color: $light;
-					transition: $tr;
+					transition      : $tr;
 
 					li {
-						margin: 0;
-						height: auto;
+						margin       : 0;
+						height       : auto;
 						margin-bottom: 15px;
 
 						&:last-child {
@@ -148,8 +154,8 @@ top panel
 
 					ul {
 						pointer-events: all;
-						opacity: 1;
-						transform: scale(1) translateY(0);
+						opacity       : 1;
+						transform     : scale(1) translateY(0);
 					}
 				}
 			}
@@ -157,16 +163,16 @@ top panel
 	}
 
 	.mil-social {
-		position: relative;
-		padding: 0 40px;
+		position     : relative;
+		padding      : 0 40px;
 		border-bottom: solid 2px $black;
 
 		&::after {
-			content: "";
-			position: absolute;
-			left: 9px;
-			bottom: -9px;
-			right: -5px;
+			content      : "";
+			position     : absolute;
+			left         : 9px;
+			bottom       : -9px;
+			right        : -5px;
 			border-bottom: 2px solid $soft;
 		}
 
@@ -175,10 +181,10 @@ top panel
 
 			li {
 				list-style-type: none;
-				margin-right: 25px;
-				height: 80px;
-				display: flex;
-				align-items: center;
+				margin-right   : 25px;
+				height         : 80px;
+				display        : flex;
+				align-items    : center;
 
 				&:last-child {
 					margin-right: 0;
@@ -186,9 +192,9 @@ top panel
 
 				a {
 					text-decoration: none;
-					color: $dark;
-					transition: $tr;
-					line-height: 0;
+					color          : $dark;
+					transition     : $tr;
+					line-height    : 0;
 
 					svg {
 						width: 20px;
@@ -209,10 +215,10 @@ top panel
 	&.mil-tp-2 {
 
 		.mil-tp-frame {
-			width: 100%;
-			display: flex;
+			width          : 100%;
+			display        : flex;
 			justify-content: flex-start;
-			align-items: center;
+			align-items    : center;
 
 			@media screen and (max-width: 1200px) {
 				justify-content: space-between;
@@ -221,23 +227,23 @@ top panel
 
 		.mil-logo {
 			border-bottom: solid 2px $black;
-			border-right: solid 2px $black;
+			border-right : solid 2px $black;
 
 			&::before,
 			&::after {
-				content: "";
-				position: absolute;
-				left: 9px;
-				right: -9px;
-				bottom: -9px;
+				content      : "";
+				position     : absolute;
+				left         : 9px;
+				right        : -9px;
+				bottom       : -9px;
 				border-bottom: solid 2px $soft;
 			}
 
 			&::after {
-				left: auto;
-				top: 8px;
-				bottom: -7px;
-				border-right: solid 2px $soft;
+				left         : auto;
+				top          : 8px;
+				bottom       : -7px;
+				border-right : solid 2px $soft;
 				border-bottom: none;
 			}
 
@@ -247,9 +253,9 @@ top panel
 		}
 
 		nav {
-			padding-left: 40px;
+			padding-left : 40px;
 			padding-right: 40px;
-			border-top: none;
+			border-top   : none;
 		}
 
 	}
@@ -259,27 +265,27 @@ top panel
 
 		&.mil-active {
 			background-color: $light;
-			box-shadow: 0 20px 20px 0 $light;
-			box-shadow: none;
+			box-shadow      : 0 20px 20px 0 $light;
+			box-shadow      : none;
 		}
 
 		nav {
-			opacity: 0;
-			pointer-events: none;
-			padding: 30px 0;
-			border: none;
-			position: absolute;
+			opacity         : 0;
+			pointer-events  : none;
+			padding         : 30px 0;
+			border          : none;
+			position        : absolute;
 			background-color: $light;
-			top: 90px;
-			width: 100%;
-			border-bottom: solid 2px $soft;
-			transform: scale(0.9) translateY(-5px);
-			transition: $tr;
+			top             : 90px;
+			width           : 100%;
+			border-bottom   : solid 2px $soft;
+			transform       : scale(0.9) translateY(-5px);
+			transition      : $tr;
 
 			&.mil-active {
-				opacity: 1;
+				opacity       : 1;
 				pointer-events: all;
-				transform: scale(1) translateY(0);
+				transform     : scale(1) translateY(0);
 			}
 
 			ul {
@@ -287,9 +293,9 @@ top panel
 
 				li {
 					flex-direction: column;
-					height: auto;
-					margin-right: 0;
-					margin-bottom: 15px;
+					height        : auto;
+					margin-right  : 0;
+					margin-bottom : 15px;
 
 					&:last-child {
 						margin-bottom: 0;
@@ -307,12 +313,12 @@ top panel
 					}
 
 					ul {
-						border: none;
+						border          : none;
 						background-color: #f3f3f3;
-						padding: 0;
-						position: static;
-						width: 100%;
-						max-height: 0;
+						padding         : 0;
+						position        : static;
+						width           : 100%;
+						max-height      : 0;
 
 						li {
 

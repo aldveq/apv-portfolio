@@ -84,6 +84,12 @@ if ( ! class_exists( 'APVPortfolioThemeOptions' ) ) :
 					)
 				)
 				->add_tab(
+					__( 'Header', 'apv-portfolio' ),
+					array(
+						Field::make( 'text', 'apv_header_brand_text', __( 'Header Brand Text', 'apv-portfolio' ) ),
+					)
+				)
+				->add_tab(
 					__( 'Contact Information', 'apv-portfolio' ),
 					array(
 						Field::make( 'separator', 'separator_emails', __( 'Emails', 'apv-portfolio' ) ),
