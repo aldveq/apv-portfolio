@@ -290,13 +290,14 @@ if ( ! class_exists( 'APVPortfolioGutenbergBlocks' ) ) :
 							->add_fields(
 								array(
 									Field::make( 'select', 'contact_info', __( 'Choose Contact Info', 'apv-portfolio' ) )
-										->add_options(
+										->set_options(
 											array(
 												'phones'  => __( 'Phones', 'apv-portfolio' ),
 												'address' => __( 'Address', 'apv-portfolio' ),
 												'emails'  => __( 'Emails', 'apv-portfolio' ),
 											)
-										),
+										)
+										->set_default_value( 'phones' ),
 								)
 							),
 						Field::make( 'text', 'apv_contact_form_shortcode', __( 'Contact Form Shortcode', 'apv-portfolio' ) ),
