@@ -4,6 +4,10 @@ function buildSectionsPagination() {
 		const paginationWrapperEl = document.querySelector("div.mil-pagination");
 
 		if (sections.length) {
+			if (sections.length === 1) {
+				return;
+			}
+
 			let paginationItem = "";
 
 			sections.forEach((singleSection, indexSection) => {
