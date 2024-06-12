@@ -67,7 +67,7 @@ $block_name                  = is_array( $block_attributes ) && array_key_exists
 			<div class="col-lg-6">
 
 				<div class="mil-timeline-nav-2">
-					<div class="mil-timeline-2-pagination mil-upper mil-mb-30"></div>
+					<div class="mil-timeline-2-pagination mil-upper mil-mb-30" id="milTimeline2Pagination"></div>
 					<div class="mil-slider-nav mil-mb-30">
 						<div class="mil-prev mil-timeline-2-prev">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
