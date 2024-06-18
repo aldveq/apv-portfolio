@@ -13,4 +13,32 @@
 			line-height: 1.5;
 		}
 	}
+
+	.swiper-education-block-init {
+		width       : 100%;
+		height      : 100%;
+		margin-left : auto;
+		margin-right: auto;
+
+		.swiper-wrapper {
+			flex-direction: row;
+
+			.swiper-slide {
+				height         : calc((100% - 10px) / 2) !important;
+				display        : flex;
+				justify-content: center;
+				align-items    : center;
+
+				.mil-text-icon {
+					&::after {
+						top: 7px;
+
+						@media screen and (min-width: 1024px) {
+							top: -40px;
+						}
+					}
+				}
+			}
+		}
+	}
 }

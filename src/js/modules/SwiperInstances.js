@@ -44,6 +44,26 @@ new Swiper('.mil-timeline-slider-2', {
 	},
 });
 
+new Swiper('.swiper-education-block-init', {
+	slidesPerView: 1,
+	spaceBetween: 10,
+	speed: 800,
+	parallax: true,
+	grabCursor: true,
+	grid: {
+		rows: 2,
+	},
+	navigation: {
+		prevEl: '.mil-timeline-edu-prev',
+		nextEl: '.mil-timeline-edu-next',
+	},
+	pagination: {
+		el: '#milTimelineEduPagination',
+		type: 'fraction',
+		clickable: true,
+	},
+});
+
 new Swiper('.mil-reviews-slider', {
 	slidesPerView: 1,
 	spaceBetween: 30,

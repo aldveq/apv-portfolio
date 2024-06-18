@@ -33,7 +33,7 @@ $block_name                 = is_array( $block_attributes ) && array_key_exists(
 		<div class="row justify-content-between">
 			<div class="col-xl-5 mil-mb-60">
 
-				<div class="mil-text-right-adapt">
+				<div class="mil-text-right-adapt mil-mb-30">
 					<?php
 					if ( ! empty( $apv_education_overline ) ) :
 						?>
@@ -66,62 +66,88 @@ $block_name                 = is_array( $block_attributes ) && array_key_exists(
 					?>
 				</div>
 
+				<div class="mil-timeline-nav-2">
+					<div class="mil-timeline-2-pagination mil-upper mil-mb-30" id="milTimelineEduPagination"></div>
+					<div class="mil-slider-nav mil-mb-30">
+						<div class="mil-prev mil-timeline-edu-prev">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<polyline points="9 18 15 12 9 6"></polyline>
+							</svg>
+						</div>
+						<div class="mil-next mil-timeline-edu-next">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<polyline points="9 18 15 12 9 6"></polyline>
+							</svg>
+						</div>
+					</div>
+				</div>
+
 			</div>
 			<div class="col-xl-6">
 				<?php
 				if ( is_array( $apv_education_data ) && count( $apv_education_data ) > 0 ) :
-					foreach ( $apv_education_data as $e_data_key => $e_data_value ) :
-						?>
-						<div class="mil-icon-box <?php echo ( count( $apv_education_data ) - 1 ) !== $e_data_key ? esc_attr( 'mil-mb-40' ) : ''; ?>">
-							<?php
-							if ( ! empty( $e_data_value['link'] ) ) :
-								?>
-								<div class="mil-text-icon">
-									<a 
-										href="<?php echo esc_url( $e_data_value['link'] ); ?>"
-										target="_blank"
-									>
-										<i class="fas fa-external-link-alt"></i>
-									</a>
-								</div>
-								<?php
-							endif;
-							?>
-							<div class="mil-box-text">
-								<?php
-								if ( ! empty( $e_data_value['title'] ) ) :
-									?>
-									<p class="mil-upper mil-text-lg mil-mb-10"><?php echo esc_html( $e_data_value['title'] ); ?></p>
-									<?php
-								endif;
-								?>
-								<?php
-								if ( ! empty( $e_data_value['period'] ) ) :
-									?>
-									<p class="mil-upper mil-upper-sm mil-mb-30">
-									<?php
-										echo wp_kses(
-											APVPortfolioUtilities::highlight_text_with_accent_color( $e_data_value['period'] ),
-											array(
-												'span' => array(
-													'class' => array(),
-												),
-											)
-										);
-									?>
-									</p>
-									<?php
-								endif;
-								?>
-								<?php
-								if ( ! empty( $e_data_value['description'] ) ) :
-									echo wp_kses_post( wpautop( $e_data_value['description'] ) );
-								endif;
-								?>
-							</div>
-						</div>
+					?>
+					<div class="swiper swiper-education-block-init">
+						<div class="swiper-wrapper">
 						<?php
-					endforeach;
+						foreach ( $apv_education_data as $e_data_value ) :
+							?>
+							<div class="swiper-slide">
+								<div class="mil-icon-box">
+									<?php
+									if ( ! empty( $e_data_value['link'] ) ) :
+										?>
+										<div class="mil-text-icon">
+											<a 
+												href="<?php echo esc_url( $e_data_value['link'] ); ?>"
+												target="_blank"
+											>
+												<i class="fas fa-external-link-alt"></i>
+											</a>
+										</div>
+										<?php
+									endif;
+									?>
+									<div class="mil-box-text">
+										<?php
+										if ( ! empty( $e_data_value['title'] ) ) :
+											?>
+											<p class="mil-upper mil-text-lg mil-mb-10"><?php echo esc_html( $e_data_value['title'] ); ?></p>
+											<?php
+										endif;
+										?>
+										<?php
+										if ( ! empty( $e_data_value['period'] ) ) :
+											?>
+											<p class="mil-upper mil-upper-sm mil-mb-30">
+											<?php
+												echo wp_kses(
+													APVPortfolioUtilities::highlight_text_with_accent_color( $e_data_value['period'] ),
+													array(
+														'span' => array(
+															'class' => array(),
+														),
+													)
+												);
+											?>
+											</p>
+											<?php
+										endif;
+										?>
+										<?php
+										if ( ! empty( $e_data_value['description'] ) ) :
+											echo wp_kses_post( wpautop( $e_data_value['description'] ) );
+										endif;
+										?>
+									</div>
+								</div>
+							</div>
+							<?php
+						endforeach;
+						?>
+						</div>
+					</div>
+					<?php
 				endif;
 				?>
 			</div>
