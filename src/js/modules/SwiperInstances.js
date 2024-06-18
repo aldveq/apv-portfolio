@@ -28,6 +28,7 @@ new Swiper('.mil-timeline-slider-2', {
 	spaceBetween: 30,
 	speed: 800,
 	parallax: true,
+	grabCursor: true,
 	navigation: {
 		prevEl: '.mil-timeline-2-prev',
 		nextEl: '.mil-timeline-2-next',
