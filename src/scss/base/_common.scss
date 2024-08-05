@@ -366,11 +366,11 @@ input {
 	height          : 60px;
 	width           : 100%;
 	border          : none;
-	background-color: #f3f3f3;
+	background-color: $dark;
 	padding         : 0 30px;
 	font-family     : $font-1;
 	font-size       : 16px;
-	color           : $dark;
+	color           : $light;
 
 	&:focus {
 		outline: inherit;
@@ -382,10 +382,10 @@ textarea {
 	height          : 120px;
 	width           : 100%;
 	border          : none;
-	background-color: #f3f3f3;
+	background-color: $dark;
 	font-family     : $font-1;
 	font-size       : 16px;
-	color           : $dark;
+	color           : $light;
 	resize          : none;
 
 	&:focus {
