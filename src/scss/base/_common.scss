@@ -340,10 +340,10 @@ button
 		border-color    : $dark;
 		background-color: $light;
 		color           : $dark;
-		box-shadow      : 7px 7px 0 0 $soft;
+		box-shadow      : 7px 7px 0 0 $accent-light;
 
 		&:hover {
-			box-shadow: 0 0 0 0 $soft;
+			box-shadow: 0 0 0 0 $accent-light;
 		}
 	}
 

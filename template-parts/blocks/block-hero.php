@@ -25,12 +25,12 @@ $block_name                = is_array( $block_attributes ) && array_key_exists( 
 ?>
 
 <section 
-	class="mil-section mil-banner mil-banner-right <?php echo esc_attr( $block_classname_attribute ); ?>"
+	class="section-hero mil-section mil-banner mil-banner-right <?php echo esc_attr( $block_classname_attribute ); ?>"
 	data-name="<?php echo esc_attr( $block_name ); ?>"
 >
 	<div class="container-full">
 		<div class="row no-gutters align-items-center justify-content-between">
-			<div class="col-xl-7">
+			<div class="col-xl-6">
 				<div class="mil-p-120-120">
 					<div class="mil-banner-text" data-swiper-parallax-y="-600" data-swiper-parallax-duration="600">
 						<div class="mil-bg-title-boxed" style="top: 0; left: -82%;"></div>
@@ -91,12 +91,12 @@ $block_name                = is_array( $block_attributes ) && array_key_exists( 
 				</div>
 			</div>
 
-			<div class="col-xl-5">
+			<div class="col-xl-6">
 				<?php
 				if ( ! empty( $apv_hero_image ) ) :
 					echo wp_get_attachment_image(
 						$apv_hero_image,
-						'hero-image-size',
+						'full',
 						false,
 						array(
 							'class' => 'mil-banner-image',
