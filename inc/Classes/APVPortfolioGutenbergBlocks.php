@@ -131,6 +131,47 @@ if ( ! class_exists( 'APVPortfolioGutenbergBlocks' ) ) :
 					}
 				);
 			// Image, Content, Cta Block - End.
+			// Image, Content, Cta Block Alt - Start.
+			Block::make( __( 'Image, Content, Cta Block Alt', 'apv-portfolio' ) )
+				->add_fields(
+					array(
+						Field::make( 'image', 'apv_image_content_cta_alt_image', __( 'Image', 'apv-portfolio' ) ),
+						Field::make( 'text', 'apv_image_content_cta_alt_overline', __( 'Overline', 'apv-portfolio' ) )
+							->help_text( __( 'Wrap text in __* to distinguish it with the global accent color. Example: The wrapped text has a __*different color*__.', 'apv-portfolio' ) ),
+						Field::make( 'text', 'apv_image_content_cta_alt_heading', __( 'Heading', 'apv-portfolio' ) ),
+						Field::make( 'rich_text', 'apv_image_content_cta_alt_body_content', __( 'Body Content', 'apv-portfolio' ) )
+							->set_settings(
+								array(
+									'media_buttons' => false,
+								)
+							),
+						Field::make( 'text', 'apv_image_content_cta_alt_title', __( 'Title', 'apv-portfolio' ) )
+							->set_width( 25 ),
+						Field::make( 'text', 'apv_image_content_cta_alt_url', __( 'URL', 'apv-portfolio' ) )
+							->set_width( 25 ),
+						Field::make( 'checkbox', 'apv_image_content_cta_alt_target', __( 'Open in new tab?', 'apv-portfolio' ) )
+							->set_width( 25 ),
+						Field::make( 'checkbox', 'apv_image_content_cta_alt_download_file', __( 'Download file?', 'apv-portfolio' ) )
+							->set_width( 25 ),
+					)
+				)
+				->set_description( __( 'Image, Content, Cta Block Alt', 'apv-portfolio' ) )
+				->set_category( 'apv-blocks', __( 'APV Blocks', 'apv-portfolio' ) )
+				->set_icon( 'align-pull-left' )
+				->set_keywords( array( __( 'Image', 'apv-portfolio' ), __( 'Content', 'apv-portfolio' ), __( 'CTA', 'apv-portfolio' ) ) )
+				->set_render_callback(
+					function ( $fields, $attributes ) {
+						get_template_part(
+							'template-parts/blocks/block',
+							'image-content-cta-alt',
+							array(
+								'data'             => $fields,
+								'block_attributes' => $attributes,
+							)
+						);
+					}
+				);
+			// Image, Content, Cta Block Alt - End.
 			// Skills Block - Start.
 			Block::make( __( 'Skills Block', 'apv-portfolio' ) )
 				->add_fields(
