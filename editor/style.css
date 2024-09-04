@@ -7,6 +7,25 @@
 	max-width: initial;
 }
 
+.wp-block h1,
+.wp-block h2,
+.wp-block .mil-icon-box .mil-text-icon {
+	color: var(--gray-color) !important;
+}
+
+.wp-block .cf-block__fields {
+	padding: 0 100px;
+}
+
+.wp-block .cf-block__preview {
+	padding         : 100px 0;
+	background-color: var(--light-color);
+}
+
+.wp-block .mil-bg-item {
+	display: none !important;
+}
+
 /* Blocks styles - Start */
 
 /* Exprience Block - Start */
