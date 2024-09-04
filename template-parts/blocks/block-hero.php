@@ -28,6 +28,8 @@ $block_name                = is_array( $block_attributes ) && array_key_exists( 
 	class="section-hero mil-section mil-banner mil-banner-right <?php echo esc_attr( $block_classname_attribute ); ?>"
 	data-name="<?php echo esc_attr( $block_name ); ?>"
 >
+	<div class="mil-bg-item mil-bg-item-large" style="top: -15%; right: 25%; transform: rotate(40deg)"></div>
+
 	<div class="container-full">
 		<div class="row no-gutters align-items-center justify-content-between">
 			<div class="col-xl-6">
