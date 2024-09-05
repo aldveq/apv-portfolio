@@ -22,13 +22,13 @@ $apv_image_content_cta_alt_title         = $args['data']['apv_image_content_cta_
 $apv_image_content_cta_alt_url           = $args['data']['apv_image_content_cta_alt_url'];
 $apv_image_content_cta_alt_target        = $args['data']['apv_image_content_cta_alt_target'];
 $apv_image_content_cta_alt_download_file = $args['data']['apv_image_content_cta_alt_download_file'];
+$apv_image_content_cta_alt_block_id      = ! empty( $args['data']['apv_image_content_cta_alt_block_id'] ) ? $args['data']['apv_image_content_cta_alt_block_id'] : '';
 $block_attributes                        = $args['block_attributes'];
 $block_classname_attribute               = is_array( $block_attributes ) && array_key_exists( 'className', $block_attributes ) ? $block_attributes['className'] : '';
-$block_name                              = is_array( $block_attributes ) && array_key_exists( 'metadata', $block_attributes ) ? $block_attributes['metadata']['name'] : '';
 ?>
 <section 
 	class="section-image-content-cta-alt mil-section mil-op-space-90 <?php echo esc_attr( $block_classname_attribute ); ?>"
-	data-name="<?php echo esc_attr( $block_name ); ?>"
+	data-name="<?php echo esc_attr( $apv_image_content_cta_alt_block_id ); ?>"
 >
 
 	<div class="mil-bg-item mil-bg-item-large" style="top: -20%; left: 15%; transform: rotate(-35deg)"></div>

@@ -155,6 +155,7 @@ if ( ! class_exists( 'APVPortfolioGutenbergBlocks' ) ) :
 							->set_width( 25 ),
 						Field::make( 'checkbox', 'apv_image_content_cta_alt_download_file', __( 'Download file?', 'apv-portfolio' ) )
 							->set_width( 25 ),
+						Field::make( 'text', 'apv_image_content_cta_alt_block_id', __( 'Block Id', 'apv-portfolio' ) ),
 					)
 				)
 				->set_description( __( 'Image, Content, Cta Block Alt', 'apv-portfolio' ) )
