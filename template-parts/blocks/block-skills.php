@@ -17,14 +17,14 @@ use APVPortfolio\Classes\APVPortfolioUtilities;
 $apv_skills_overline       = $args['data']['apv_skills_overline'];
 $apv_skills_heading        = $args['data']['apv_skills_heading'];
 $apv_skills_data           = $args['data']['apv_skills_data'];
+$apv_skills_block_id       = ! empty( $args['data']['apv_skills_block_id'] ) ? $args['data']['apv_skills_block_id'] : '';
 $block_attributes          = $args['block_attributes'];
 $block_classname_attribute = is_array( $block_attributes ) && array_key_exists( 'className', $block_attributes ) ? $block_attributes['className'] : '';
-$block_name                = is_array( $block_attributes ) && array_key_exists( 'metadata', $block_attributes ) ? $block_attributes['metadata']['name'] : '';
 ?>
 
 <section 
 	class="mil-section mil-op-space-90 <?php echo esc_attr( $block_classname_attribute ); ?>"
-	data-name="<?php echo esc_attr( $block_name ); ?>"
+	data-name="<?php echo esc_attr( $apv_skills_block_id ); ?>"
 >
 	<div class="mil-bg-item" style="bottom: 15%; left: 7%;"></div>
 	<div class="mil-bg-item mil-bg-item-large" style="top: -15%; right: 25%; transform: rotate(-35deg)"></div>

@@ -195,6 +195,7 @@ if ( ! class_exists( 'APVPortfolioGutenbergBlocks' ) ) :
 										->set_width( 33 ),
 								)
 							),
+						Field::make( 'text', 'apv_skills_block_id', __( 'Block Id', 'apv-portfolio' ) ),
 					)
 				)
 				->set_description( __( 'Skills Block', 'apv-portfolio' ) )
