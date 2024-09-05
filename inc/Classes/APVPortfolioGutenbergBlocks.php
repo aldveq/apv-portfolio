@@ -56,7 +56,7 @@ if ( ! class_exists( 'APVPortfolioGutenbergBlocks' ) ) :
 									'media_buttons' => false,
 								)
 							),
-						Field::make( 'complex', 'apv_hero_ctas', __( 'Ctas' ) )
+						Field::make( 'complex', 'apv_hero_ctas', __( 'Ctas', 'apv-portfolio' ) )
 							->set_layout( 'tabbed-horizontal' )
 							->set_max( 2 )
 							->add_fields(
@@ -71,6 +71,7 @@ if ( ! class_exists( 'APVPortfolioGutenbergBlocks' ) ) :
 										->set_width( 25 ),
 								)
 							),
+						Field::make( 'text', 'apv_hero_block_id', __( 'Block Id', 'apv-portfolio' ) ),
 					)
 				)
 				->set_description( __( 'Hero Slider Block', 'apv-portfolio' ) )

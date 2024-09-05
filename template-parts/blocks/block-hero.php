@@ -19,14 +19,14 @@ $apv_hero_overline         = $args['hero_data']['apv_hero_overline'];
 $apv_hero_heading          = $args['hero_data']['apv_hero_heading'];
 $apv_hero_body_content     = $args['hero_data']['apv_hero_body_content'];
 $apv_hero_ctas             = $args['hero_data']['apv_hero_ctas'];
+$apv_hero_block_id         = ! empty( $args['hero_data']['apv_hero_block_id'] ) ? $args['hero_data']['apv_hero_block_id'] : '';
 $block_attributes          = $args['block_attributes'];
 $block_classname_attribute = is_array( $block_attributes ) && array_key_exists( 'className', $block_attributes ) ? $block_attributes['className'] : '';
-$block_name                = is_array( $block_attributes ) && array_key_exists( 'metadata', $block_attributes ) ? $block_attributes['metadata']['name'] : '';
 ?>
 
 <section 
 	class="section-hero mil-section mil-banner mil-banner-right <?php echo esc_attr( $block_classname_attribute ); ?>"
-	data-name="<?php echo esc_attr( $block_name ); ?>"
+	data-name="<?php echo esc_attr( $apv_hero_block_id ); ?>"
 >
 	<div class="mil-bg-item mil-bg-item-large" style="top: -15%; right: 25%; transform: rotate(40deg)"></div>
 
