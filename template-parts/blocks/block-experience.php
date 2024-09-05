@@ -18,13 +18,13 @@ $apv_experience_overline     = $args['data']['apv_experience_overline'];
 $apv_experience_heading      = $args['data']['apv_experience_heading'];
 $apv_experience_body_content = $args['data']['apv_experience_body_content'];
 $apv_experience_data         = $args['data']['apv_experience_data'];
+$apv_experience_block_id     = ! empty( $args['data']['apv_experience_block_id'] ) ? $args['data']['apv_experience_block_id'] : '';
 $block_attributes            = $args['block_attributes'];
 $block_classname_attribute   = is_array( $block_attributes ) && array_key_exists( 'className', $block_attributes ) ? $block_attributes['className'] : '';
-$block_name                  = is_array( $block_attributes ) && array_key_exists( 'metadata', $block_attributes ) ? $block_attributes['metadata']['name'] : '';
 ?>
 <section 
 	class="mil-section mil-op-space-90 section-experience <?php echo esc_attr( $block_classname_attribute ); ?>"
-	data-name="<?php echo esc_attr( $block_name ); ?>"
+	data-name="<?php echo esc_attr( $apv_experience_block_id ); ?>"
 >
 	<div class="mil-bg-item" style="top: 0; right: 15%; transform: rotate(-25deg)"></div>
 	<div class="mil-bg-item" style="bottom: 15%; left: -5%; transform: rotate(-25deg)"></div>
