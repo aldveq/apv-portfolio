@@ -348,6 +348,7 @@ if ( ! class_exists( 'APVPortfolioGutenbergBlocks' ) ) :
 								)
 							),
 						Field::make( 'text', 'apv_contact_form_shortcode', __( 'Contact Form Shortcode', 'apv-portfolio' ) ),
+						Field::make( 'text', 'apv_contact_block_id', __( 'Block Id', 'apv-portfolio' ) ),
 					)
 				)
 				->set_description( __( 'Contact Block', 'apv-portfolio' ) )

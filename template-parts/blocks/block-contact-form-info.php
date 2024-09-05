@@ -19,13 +19,13 @@ $apv_contact_heading        = $args['data']['apv_contact_heading'];
 $apv_contact_body_content   = $args['data']['apv_contact_body_content'];
 $apv_contact_info           = $args['data']['apv_contact_info'];
 $apv_contact_form_shortcode = $args['data']['apv_contact_form_shortcode'];
+$apv_contact_block_id       = ! empty( $args['data']['apv_contact_block_id'] ) ? $args['data']['apv_contact_block_id'] : '';
 $block_attributes           = $args['block_attributes'];
 $block_classname_attribute  = is_array( $block_attributes ) && array_key_exists( 'className', $block_attributes ) ? $block_attributes['className'] : '';
-$block_name                 = is_array( $block_attributes ) && array_key_exists( 'metadata', $block_attributes ) ? $block_attributes['metadata']['name'] : '';
 ?>
 <section 
 	class="section-contact mil-section mil-op-space-90 <?php echo esc_attr( $block_classname_attribute ); ?>"
-	data-name="<?php echo esc_attr( $block_name ); ?>"
+	data-name="<?php echo esc_attr( $apv_contact_block_id ); ?>"
 >
 
 	<div class="mil-bg-item" style="bottom: -5%; right: 0; transform: rotate(-25deg)"></div>
