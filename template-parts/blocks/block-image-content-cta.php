@@ -22,13 +22,13 @@ $apv_image_content_cta_title         = $args['data']['apv_image_content_cta_titl
 $apv_image_content_cta_url           = $args['data']['apv_image_content_cta_url'];
 $apv_image_content_cta_target        = $args['data']['apv_image_content_cta_target'];
 $apv_image_content_cta_download_file = $args['data']['apv_image_content_cta_download_file'];
+$apv_image_content_cta_block_id      = ! empty( $args['data']['apv_image_content_cta_block_id'] ) ? $args['data']['apv_image_content_cta_block_id'] : '';
 $block_attributes                    = $args['block_attributes'];
 $block_classname_attribute           = is_array( $block_attributes ) && array_key_exists( 'className', $block_attributes ) ? $block_attributes['className'] : '';
-$block_name                          = is_array( $block_attributes ) && array_key_exists( 'metadata', $block_attributes ) ? $block_attributes['metadata']['name'] : '';
 ?>
 <section 
 	class="mil-section mil-op-space-90 <?php echo esc_attr( $block_classname_attribute ); ?>"
-	data-name="<?php echo esc_attr( $block_name ); ?>"
+	data-name="<?php echo esc_attr( $apv_image_content_cta_block_id ); ?>"
 >
 	<div class="mil-bg-item mil-bg-item-large" style="top: -25%; right: 15%; transform: rotate(-35deg)"></div>
 
