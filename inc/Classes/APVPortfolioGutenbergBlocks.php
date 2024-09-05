@@ -298,6 +298,7 @@ if ( ! class_exists( 'APVPortfolioGutenbergBlocks' ) ) :
 										),
 								)
 							),
+						Field::make( 'text', 'apv_education_block_id', __( 'Block Id', 'apv-portfolio' ) ),
 					)
 				)
 				->set_description( __( 'Education Block', 'apv-portfolio' ) )

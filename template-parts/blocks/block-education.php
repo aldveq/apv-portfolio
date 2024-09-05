@@ -18,13 +18,13 @@ $apv_education_overline     = $args['data']['apv_education_overline'];
 $apv_education_heading      = $args['data']['apv_education_heading'];
 $apv_education_body_content = $args['data']['apv_education_body_content'];
 $apv_education_data         = $args['data']['apv_education_data'];
+$apv_education_block_id     = ! empty( $args['data']['apv_education_block_id'] ) ? $args['data']['apv_education_block_id'] : '';
 $block_attributes           = $args['block_attributes'];
 $block_classname_attribute  = is_array( $block_attributes ) && array_key_exists( 'className', $block_attributes ) ? $block_attributes['className'] : '';
-$block_name                 = is_array( $block_attributes ) && array_key_exists( 'metadata', $block_attributes ) ? $block_attributes['metadata']['name'] : '';
 ?>
 <section 
 	class="section-education mil-section mil-op-space-90 <?php echo esc_attr( $block_classname_attribute ); ?>"
-	data-name="<?php echo esc_attr( $block_name ); ?>"
+	data-name="<?php echo esc_attr( $apv_education_block_id ); ?>"
 >
 
 	<div class="mil-bg-item" style="bottom: 0%; left: 25%; transform: rotate(-25deg)"></div>
