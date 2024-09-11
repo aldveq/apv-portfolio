@@ -12,52 +12,52 @@
 		line-height: 1.6;
 
 		a {
-			color          : $accent;
+			color: $accent;
 			text-decoration: none;
 		}
 	}
 
 	.mil-cover {
 		position: relative;
-		width   : fit-content;
+		width: fit-content;
 
 		&::after {
-			content       : "";
-			position      : absolute;
-			left          : 12px;
-			top           : 12px;
-			right         : -12px;
-			bottom        : -4px;
-			z-index       : -1;
-			border        : 2px solid $dark;
+			content: "";
+			position: absolute;
+			left: 12px;
+			top: 12px;
+			right: -12px;
+			bottom: -4px;
+			z-index: -1;
+			border: 2px solid $dark;
 			pointer-events: none;
-			transform     : scale(1);
-			transition    : 0.4s cubic-bezier(0, 0, 0.3642, 1);
+			transform: scale(1);
+			transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
 		}
 
 		img {
-			max-width      : 315px;
-			object-fit     : cover;
+			max-width: 315px;
+			object-fit: cover;
 			object-position: center;
 		}
 	}
 
 	.external-link {
 		text-decoration: none;
-		display        : flex;
-		align-items    : center;
-		width          : 100%;
+		display: flex;
+		align-items: center;
+		width: 100%;
 
 		i {
 			margin-left: 7px;
-			font-size  : 14px;
+			font-size: 14px;
 		}
 	}
 
 	.mil-timeline-nav {
-		height         : 100%;
-		display        : flex;
-		flex-direction : column;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
 		justify-content: center;
 	}
 
@@ -65,12 +65,12 @@
 		width: 100%;
 
 		.nav-links {
-			width          : 100%;
+			width: 100%;
 			justify-content: space-between;
 
 			@media screen and (max-width: 490px) {
 				flex-direction: column;
-				align-items   : center;
+				align-items: center;
 			}
 
 			.nav-previous {
