@@ -2,7 +2,7 @@
 
 'use strict';
 
-new Swiper('.mil-timeline-slider', {
+new Swiper( '.mil-timeline-slider', {
 	slidesPerView: 1,
 	spaceBetween: 30,
 	speed: 800,
@@ -21,9 +21,9 @@ new Swiper('.mil-timeline-slider', {
 			slidesPerView: 2,
 		},
 	},
-});
+} );
 
-new Swiper('.mil-timeline-slider-2', {
+new Swiper( '.mil-timeline-slider-2', {
 	slidesPerView: 1,
 	spaceBetween: 30,
 	speed: 800,
@@ -43,9 +43,9 @@ new Swiper('.mil-timeline-slider-2', {
 			slidesPerView: 3,
 		},
 	},
-});
+} );
 
-new Swiper('.swiper-education-block-init', {
+new Swiper( '.swiper-education-block-init', {
 	slidesPerView: 1,
 	spaceBetween: 10,
 	speed: 800,
@@ -63,9 +63,9 @@ new Swiper('.swiper-education-block-init', {
 		type: 'fraction',
 		clickable: true,
 	},
-});
+} );
 
-new Swiper('.mil-reviews-slider', {
+new Swiper( '.mil-reviews-slider', {
 	slidesPerView: 1,
 	spaceBetween: 30,
 	speed: 800,
@@ -79,4 +79,4 @@ new Swiper('.mil-reviews-slider', {
 		type: 'fraction',
 		clickable: true,
 	},
-});
+} );
