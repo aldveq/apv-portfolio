@@ -61,7 +61,7 @@ p {
 }
 
 h1 {
-	line-height: 16px;
+	line-height: 100%; /* stylelint-disable-line */
 	font-size: 80px;
 	text-shadow: 5px 5px 0 $soft;
 
@@ -71,7 +71,7 @@ h1 {
 }
 
 h2 {
-	line-height: 16px;
+	line-height: 100%; /* stylelint-disable-line */
 	font-size: 58px;
 	text-shadow: 5px 5px 0 $soft;
 
@@ -85,7 +85,7 @@ h2 {
 }
 
 h3 {
-	line-height: 16px;
+	line-height: 100%; /* stylelint-disable-line */
 	font-size: 40px;
 	text-shadow: 5px 5px 0 $soft;
 
@@ -99,7 +99,7 @@ h3 {
 }
 
 h4 {
-	line-height: 16px;
+	line-height: 100%; /* stylelint-disable-line */
 	font-size: 22px;
 }
 
@@ -149,7 +149,7 @@ h4 {
 
 .mil-upper {
 	font-size: 16px;
-	line-height: 16px;
+	line-height: 100%; /* stylelint-disable-line */
 	text-transform: uppercase;
 	font-weight: 600;
 	color: $dark;
