@@ -10,7 +10,7 @@
 $projects_taxonomy_data = get_terms(
 	array(
 		'taxonomy'   => 'projects-category',
-		'hide_empty' => false,
+		'hide_empty' => true,
 	)
 );
 
