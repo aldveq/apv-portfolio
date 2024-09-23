@@ -1,20 +1,20 @@
 {
-  "name": "underscores",
+  "name": "apv-portfolio",
   "version": "1.0.0",
-  "description": "Hi. I'm a starter theme called _s, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.",
-  "author": "Automattic Theme Team",
+  "description": "The official Aldo Paz Velasquez's web portfolio site. A WordPress Theme based on the underscores starter theme.",
+  "author": "Aldo Paz Velasquez",
   "license": "GPL-2.0-or-later",
   "keywords": [
     "WordPress",
     "Theme"
   ],
-  "homepage": "https://github.com/Automattic/_s#readme",
+  "homepage": "https://apazvelasquez.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Automattic/_s.git"
+    "url": "https://github.com/aldveq/apv-portfolio"
   },
   "bugs": {
-    "url": "https://github.com/Automattic/_s/issues"
+    "url": "https://github.com/aldveq/apv-portfolio/issues"
   },
   "devDependencies": {
     "@wordpress/scripts": "^19.2.2",
