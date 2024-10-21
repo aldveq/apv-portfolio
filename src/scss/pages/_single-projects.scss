@@ -61,6 +61,10 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
+
+		@media only screen and (max-width: 992px) {
+			justify-content: center;
+		}
 	}
 
 	&__post-nav {
