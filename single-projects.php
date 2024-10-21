@@ -70,9 +70,6 @@ $single_project_description = carbon_get_post_meta( get_the_ID(), 'project_cpt_d
 					<div class="col-lg-4">
 
 						<div class="mil-timeline-nav">
-							<div class="mil-mb-30">
-								<p class="mil-upper mil-mb-10">Date: <span class="mil-text-sm fw-normal"><?php echo esc_html( get_the_time( 'j F Y', get_the_ID() ) ); ?></span></p>
-							</div>
 							
 							<?php
 							if ( ! empty( $single_project_client_name ) ) :
