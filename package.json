@@ -47,6 +47,6 @@
 	"lint:js:fix": "wp-scripts lint-js 'src/**/*.js' --fix",
 	"lint:php": "./vendor/bin/phpcs --standard=WordPress",
     "lint:php:fix": "./vendor/bin/phpcbf --standard=WordPress",
-    "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
+    "bundle": "dir-archiver --src . --dest ../theme-apv-portfolio.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
   }
 }
